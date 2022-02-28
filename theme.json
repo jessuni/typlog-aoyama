@@ -1,0 +1,10 @@
+{
+  "name": "aoyama",
+  "name#zh": "青山",
+  "name#ja": "青山",
+  "description": "A typlog theme.",
+  "repo": "jessuni/typlog-aoyama",
+  "version": "0.1.0",
+  "author": "Jessie Ji",
+  "tags": ["blog","podcast"]
+}
