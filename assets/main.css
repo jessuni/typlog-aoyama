@@ -78,6 +78,9 @@ body {
   text-transform: uppercase;
   color: var(--aomori-primary-color-hex);
 }
+.hero-headline a {
+  display: inline-block;
+}
 .hero-headline h3 {
   font-size: 1.25em;
   font-weight: 400;
@@ -115,6 +118,8 @@ body {
   }
   .hero.horizontal h2 {
     flex: 1 0 40%;
+    max-height: calc(40vh - clamp(36px, 4vh, 56px) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
+    overflow: hidden;
   }
   .hero.horizontal h3 {
     flex: 1 1 60%;

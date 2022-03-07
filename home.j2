@@ -6,6 +6,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
 {% endblock %}
 
+{% block script %}
+<script src="{{ static_url }}assets/font.js"></script>
+{% endblock %}
+
 {% block body %}
 <div class="main">
   {% for item in query.latest_subjects(count=5, contains=['authors', 'tags']) %}
