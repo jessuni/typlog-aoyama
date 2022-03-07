@@ -32,10 +32,12 @@
         </div>
       {% endif %}
       <div class="hero-headline">
-        <h2><a href="{{ linkify(item.url) }}">{{ item.title }}</a></h2>
-        {% if item.subtitle %}
-          <h3>{{ item.subtitle }}</h3>
-        {% endif %}
+        <div class="hero-headline__inner">
+          <h2><a href="{{ linkify(item.url) }}">{{ item.title }}</a></h2>
+          {% if item.subtitle %}
+            <h3>{{ item.subtitle }}</h3>
+          {% endif %}
+        </div>
       </div>
       <div class="hero-meta">
       {% if item.authors %}
