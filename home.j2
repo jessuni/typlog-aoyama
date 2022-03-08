@@ -8,51 +8,64 @@
 
 {% block script %}
 <script src="{{ static_url }}assets/font.js"></script>
+<script src="{{ static_url }}assets/index.js"></script>
 {% endblock %}
 
 {% block body %}
 <div class="main">
-  {% for item in query.latest_subjects(count=5, contains=['authors', 'tags']) %}
-    {% if item.cover %}
-      {% set layout = "horizontal" if item.cover.width > item.cover.height else "vertical" %}
-      <div class="hero {{ layout }}">
-    {% else %}
-      <div class="hero">
-    {% endif %}
-    {% if item.cover %}
-      <div class="hero-cover" style="background-image:url({{ item.cover.src|thumbnail('l') }})" aria-label="{{ item.title }}">
-      </div>
-    {% endif %}
-    <div class="hero-info">
-      {% if item.tags %}
-        <div class="hero-tags">
-        {% for tag in item.tags %}
-          <a href="{{ linkify(tag.url) }}">{{ tag.title }}</a>
+  <section class="section featured">
+    <div class="featured-inner">
+      <div class="featured-slider">
+        {% for item in query.latest_subjects(count=5, contains=['authors', 'tags']) %}
+          <div class="hero-wrap">
+            {% if item.cover %}
+              {% set layout = "horizontal" if item.cover.width > item.cover.height else "vertical" %}
+              <div class="hero {{ layout }}">
+            {% else %}
+              <div class="hero">
+            {% endif %}
+            {% if item.cover %}
+              <div class="hero-cover" style="background-image:url({{ item.cover.src|thumbnail('l') }})" aria-label="{{ item.title }}">
+              </div>
+            {% endif %}
+            <div class="hero-info">
+              {% if item.tags %}
+                <div class="hero-tags">
+                {% for tag in item.tags %}
+                  <a href="{{ linkify(tag.url) }}">{{ tag.title }}</a>
+                {% endfor %}
+                </div>
+              {% endif %}
+              <div class="hero-headline">
+                <div class="hero-headline__inner">
+                  <h2><a href="{{ linkify(item.url) }}">{{ item.title }}</a></h2>
+                  {% if item.subtitle %}
+                    <h3>{{ item.subtitle }}</h3>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="hero-meta">
+              {% if item.authors %}
+                <div class="hero-authors">
+                  {% for author in item.authors %}
+                    <a href="{{ linkify(author.url) }}">{{ author.name }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+                <div class="hero-time">
+                  <time class="dt-published" datetime="{{ item.published_at|xmldatetime }}" itemprop="datePublished">{{ item.published_at.strftime('%b %d, %Y') }}</time>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {% endfor %}
-        </div>
-      {% endif %}
-      <div class="hero-headline">
-        <div class="hero-headline__inner">
-          <h2><a href="{{ linkify(item.url) }}">{{ item.title }}</a></h2>
-          {% if item.subtitle %}
-            <h3>{{ item.subtitle }}</h3>
-          {% endif %}
-        </div>
-      </div>
-      <div class="hero-meta">
-      {% if item.authors %}
-        <div class="hero-authors">
-          {% for author in item.authors %}
-            <a href="{{ linkify(author.url) }}">{{ author.name }}</a>
-          {% endfor %}
-        </div>
-      {% endif %}
-        <div class="hero-time">
-          <time class="dt-published" datetime="{{ item.published_at|xmldatetime }}" itemprop="datePublished">{{ item.published_at.strftime('%b %d, %Y') }}</time>
-        </div>
       </div>
     </div>
-  </div>
-  {% endfor %}
+    <nav class="featured-nav">
+      <button id="prev" type="button" aria-label="view previous post" title="view previous post"><i><</i></button>
+      <button id="next" type="button" aria-label="view next post" title="view next post"><i>></i></button>
+    </nav>
+  </section>
 </div>
 {% endblock %}
