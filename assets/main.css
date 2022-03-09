@@ -43,7 +43,7 @@ body {
   flex-flow: row nowrap;
   width: inherit;
   height: inherit;
-  transition: transform linear 0.2s;
+  transition: transform ease-in-out 0.2s;
 }
 .featured-nav {
   position: absolute;
@@ -72,10 +72,6 @@ body {
 }
 .featured-nav button:hover {
   background-color: rgba(var(--aomori-opac-mask-rgb), 0.8);
-}
-.featured-nav button:disabled {
-  visibility: hidden;
-  opacity: 0;
 }
 .hero-wrap {
   scroll-snap-align: start;
