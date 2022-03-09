@@ -17,7 +17,7 @@ function resizeFont() {
       el.style.fontSize = fontSize + 'px'
       while(fontSize < maxSize) {
         if (text.offsetHeight > maxHeight) {
-          fontSize = fontSize - 1
+          fontSize = Math.floor(fontSize - 1)
           el.style.fontSize = fontSize + 'px'
           break
         }
