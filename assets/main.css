@@ -66,6 +66,9 @@ body {
   transition: background-color 0.2s linear;
   visibility: visible;
   opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .featured-nav button:hover {
   background-color: rgba(var(--aomori-opac-mask-rgb), 0.8);
