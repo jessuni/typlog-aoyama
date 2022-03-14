@@ -3,6 +3,7 @@
 {% block style %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="{{ static_url }}assets/main.css">
+<link rel="stylesheet" href="{{ static_url }}assets/font.css">
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
 {% endblock %}
 
@@ -13,7 +14,58 @@
 
 {% block body %}
 <div class="main">
-  <section class="section featured">
+  <section class="section landing">
+    <header class="site-info">
+      <a href="{{ linkify('/') }}">
+        {% if site.logo %}
+          <img src="{{ site.logo.src|thumbnail('ss') }}" alt="{{ site.name }} logo">
+        {% endif %}
+        <h1>{{ site.name }}</h1>
+      </a>
+      {% if site.summary %}
+        <h2 class="site-description">{{ site.summary }}</h2>
+      {% endif %}
+    </header>
+    <div class="site-links">
+      {% if site.primary_links %}
+        <nav class="site-nav">
+          <ul>
+          {% for nav in site.primary_links %}
+            <li><a href="{{ nav.url }}" {% if nav.blank %} target="_blank"{% endif %}>{{ nav.title }}</a></li>
+          {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+      {% if site.podcast %}
+        <ul class="site-podcast">
+          <li class="subscribe">Subscribe</li>
+          <li><a href="{{ linkify('/feed/audio.xml') }}"><i class="icon icon-feed" aria-hidden="true"></i><span>RSS</span></a></li>
+          {% for item in site.podcast.links %}
+            <li><a href="{{ linkify(item.url) }}"{% if item.blank %} target="_blank"{% endif %}>
+              <i class="icon icon-{{ item.icon }}"></i><span>{{ item.title }}</span>
+            </a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if site.socials %}
+        <div class="site-social">
+        {% if site.podcast and site.podcast.email %}
+          {{ render_social_icons(site, site.podcast.email) }}
+        {% else %}
+          {{ render_social_icons(site) }}
+        {% endif %}
+        </div>
+      {% endif %}
+        <a href="#" class="site-search js-search"
+          {% if features.algolia %}data-id="{{ site.algolia_id }}" data-key="{{ site.algolia_key }}"{% endif %}>
+          <i class="icon icon-search" aria-label="Search"></i>
+        </a>
+        <div class="site-subscribe">
+          <button class="js-subscribe">Subscribe</button>
+        </div>
+    </div>
+  </section>
+  <section class="section featured" id="featured-posts">
     <div class="featured-inner">
       <div class="featured-slider">
         {% for item in query.latest_subjects(count=5, contains=['authors', 'tags']) %}
@@ -67,5 +119,6 @@
       <button id="next" type="button" aria-label="view next post" title="view next post"><i class="icon icon-chevron_right"></i></button>
     </nav>
   </section>
+  <section class="section extra" id="extra-posts"></section>
 </div>
 {% endblock %}
