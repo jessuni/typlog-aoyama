@@ -15,15 +15,15 @@
 {% block body %}
 <div class="main">
   <section class="section landing">
-    <header class="site-info">
+    <header class="side-subject">
       <a href="{{ linkify('/') }}">
         {% if site.logo %}
-          <img src="{{ site.logo.src|thumbnail('ss') }}" alt="{{ site.name }} logo">
+          <img class="avatar" src="{{ site.logo.src|thumbnail('ss') }}" alt="{{ site.name }} logo">
         {% endif %}
-        <h1>{{ site.name }}</h1>
+        <h1 class="subject-name">{{ site.name }}</h1>
       </a>
       {% if site.summary %}
-        <h2 class="site-description">{{ site.summary }}</h2>
+        <h2 class="subject-description">{{ site.summary }}</h2>
       {% endif %}
     </header>
     <div class="site-links">
@@ -38,12 +38,12 @@
       {% endif %}
       {% if site.podcast %}
         <ul class="site-podcast">
-          <li class="subscribe">Subscribe</li>
-          <li><a href="{{ linkify('/feed/audio.xml') }}"><i class="icon icon-feed" aria-hidden="true"></i><span>RSS</span></a></li>
+          <li><a href="{{ linkify('/feed/audio.xml') }}" aria-label="RSS"><i class="icon icon-feed" aria-hidden="true"></i></a></li>
           {% for item in site.podcast.links %}
-            <li><a href="{{ linkify(item.url) }}"{% if item.blank %} target="_blank"{% endif %}>
-              <i class="icon icon-{{ item.icon }}"></i><span>{{ item.title }}</span>
-            </a></li>
+            <li>
+              <a href="{{ linkify(item.url) }}"{% if item.blank %} target="_blank"{% endif %}><i class="icon icon-{{ item.icon }}"></i>
+              </a>
+            </li>
           {% endfor %}
         </ul>
       {% endif %}
@@ -56,10 +56,12 @@
         {% endif %}
         </div>
       {% endif %}
-        <a href="#" class="site-search js-search"
+      <div class="site-search">
+        <a href="#" class="js-search"
           {% if features.algolia %}data-id="{{ site.algolia_id }}" data-key="{{ site.algolia_key }}"{% endif %}>
           <i class="icon icon-search" aria-label="Search"></i>
         </a>
+      </div>
         <div class="site-subscribe">
           <button class="js-subscribe">Subscribe</button>
         </div>
@@ -104,9 +106,7 @@
                   {% endfor %}
                 </div>
               {% endif %}
-                <div class="hero-time">
-                  <time class="dt-published" datetime="{{ item.published_at|xmldatetime }}" itemprop="datePublished">{{ item.published_at.strftime('%b %d, %Y') }}</time>
-                </div>
+                <time class="hero-time" datetime="{{ item.published_at|xmldatetime }}" itemprop="datePublished">{{ item.published_at.strftime('%b %d, %Y') }}</time>
               </div>
             </div>
           </div>
@@ -119,6 +119,50 @@
       <button id="next" type="button" aria-label="view next post" title="view next post"><i class="icon icon-chevron_right"></i></button>
     </nav>
   </section>
-  <section class="section extra" id="extra-posts"></section>
+  <section class="section extra" id="extra-posts">
+    {% set subject = site %}
+      <div class="side-subject">
+      {% if subject.type %}
+        <img class="avatar" src="{{ subject.logo.src|thumbnail('ss')}}" alt="{{subject.name}}" />
+        <h2 class="subject-name">{{ subject.name }}</h2>
+        {% if subject.summary %}
+          <div class="subject-description">{{ subject.summary }}</div>
+        {% endif %}
+      {% endif %}
+      {% if not subject.type or subject.type == 'tag' or subject.type == 'author' %}
+        <h1 class="side-mark">
+          <a href="{{ linkify('/') }}">
+          {% if site.logo %}
+            <img class="avatar" src="{{ site.logo.src|thumbnail('ss') }}" alt="{{ site.name }} logo" />
+          {% endif %}
+          {{ site.name }}
+          </a>
+        </h1>
+      {% endif %}
+      </div>
+    <div class="subject-list">
+      <ul>
+      {% for item in query.latest_subjects(count=5) %}
+        <li class="subject-item">
+        {% if item.cover %}
+          <img class="subject-item_cover" src="{{ item.cover.src|thumbnail('sm') }}" alt="{{ item.title }}"/>
+        {% endif %}
+          <div class="subject-item_main">
+            <h3 class="subject-item_title"><a href="{{ linkify(item.url) }}">{{ item.title }}</a></h3>
+            {% if item.subtitle %}
+              <h4 class="subject-item_subtitle">{{ item.subtitle }}</h4>
+            {% endif %}
+            <time class="subject-item_time" datetime="{{ item.published_at|xmldatetime }}" itemprop="datePublished">{{ item.published_at.strftime('%b %d, %Y') }}</time>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+      <nav class="subject-list_nav">
+        <a href="{{ linkify(site.posts_url) }}"><span>more</span><i class="icon icon-chevron_right"></i></a>
+      </nav>
+    </div>
+  </section>
 </div>
 {% endblock %}
+
+
