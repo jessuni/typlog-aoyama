@@ -1,0 +1,27 @@
+<header class="side-subject {{ class }}">
+{% if type %}
+  {% if type == 'site' %}
+    <a href="{{ linkify('/') }}">
+  {% endif %}
+  {% if site.logo %}
+      <img class="avatar" src="{{ site.logo.src|thumbnail('ss') }}" alt="{{ site.name }} logo">
+    {% endif %}
+    <h1 class="subject-name">{{ site.name }}</h1>
+  {% if type == 'site' %}
+    </a>
+  {% endif %}
+  {% if subject.summary %}
+    <h2 class="subject-description">{{ subject.summary }}</h2>
+  {% endif %}
+{% endif %}
+{% if not type or type == 'tag' or type == 'author' %}
+  <div class="side-mark">
+    <a href="{{ linkify('/') }}">
+    {% if site.logo %}
+      <img class="avatar" src="{{ site.logo.src|thumbnail('ss') }}" alt="{{ site.name }} logo" />
+    {% endif %}
+    {{ site.name }}
+    </a>
+  </div>
+{% endif %}
+</header>

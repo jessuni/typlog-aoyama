@@ -1,0 +1,16 @@
+<ul>
+{% for item in items %}
+  <li class="subject-item">
+  {% if item.cover %}
+    <img class="subject-item_cover" src="{{ item.cover.src|thumbnail('sm') }}" alt="{{ item.title }}"/>
+  {% endif %}
+    <div class="subject-item_main">
+      <h3 class="subject-item_title"><a href="{{ linkify(item.url) }}">{{ item.title }}</a></h3>
+      {% if item.subtitle %}
+        <h4 class="subject-item_subtitle">{{ item.subtitle }}</h4>
+      {% endif %}
+      <time class="subject-item_time" datetime="{{ item.published_at|xmldatetime }}" itemprop="datePublished">{{ item.published_at.strftime('%b %d, %Y') }}</time>
+    </div>
+  </li>
+{% endfor %}
+</ul>
