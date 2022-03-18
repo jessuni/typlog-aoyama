@@ -209,6 +209,7 @@ a {
   padding-bottom: clamp(36px, 4vh, 56px);
 }
 .hero-cover {
+  display: block;
   background: center / cover #eeeeee no-repeat;
   flex-shrink: 0;
   width: 100%;

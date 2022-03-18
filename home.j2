@@ -73,8 +73,8 @@
               <div class="hero">
             {% endif %}
             {% if item.cover %}
-              <div class="hero-cover" style="background-image:url({{ item.cover.src|thumbnail('l') }})" aria-label="{{ item.title }}">
-              </div>
+              <a class="hero-cover" href="{{ linkify(item.url) }}" style="background-image:url({{ item.cover.src|thumbnail('l') }})" aria-label="The cover of article: {{ item.title }}">
+              </a>
             {% endif %}
             <div class="hero-info">
               {% if item.tags %}
