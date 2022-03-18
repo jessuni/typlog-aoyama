@@ -1,0 +1,76 @@
+{% from "macros.j2" import render_subject_content, render_subject_license, render_subject_authors %}
+
+{% block style %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="{{ static_url }}assets/content.css">
+{% endblock %}
+{% block body %}
+<div class="body">
+  <div class="main _episode">
+    <article role="main" class="h-entry" itemscope itemtype="http://schema.org/Article">
+      <div class="entry-hero">
+        {% if page.cover %}
+          <div class="entry-cover" style="background-image:url({{ page.cover.src|thumbnail('l') }})" aria-label="{{ page.title }}"></div>
+        {% endif %}
+        <div class="entry-info">
+          {% if page.type == 'audio' %}
+            {% if page.season and page.episode %}
+              <span class="item-label">S{{ page.season }}E{{ page.episode }}</span>
+            {% endif %}
+            <span class="item-label">{{ page.duration }}</span>
+          {% endif %}
+          {% if page.tags %}
+            <div class="entry-tags">
+              {% for tag in page.tags %}
+                <a class="p-category" href="{{ linkify(tag.url) }}">{{ tag.title }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <div class="entry-headline">
+            <h1 class="p-name" itemprop="headline">{{ page.title }}</h1>
+            {% if page.subtitle %}
+              <h2 class="p-summary">{{ page.subtitle }}</h2>
+            {% endif %}
+          </div>
+          <div class="entry-meta">
+            <div class="entry-meta_authors">
+              {% if page.authors %}
+                {% for author in page.authors %}
+                  <span class="p-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                    <a href="{{ linkify(author.url) }}" itemprop="name">{{ author.name }}</a>
+                  </span>
+                {% endfor %}
+              {% endif %}
+            </div>
+          {% if page.published_at %}
+            <time class="dt-published" datetime="{{ page.published_at|xmldatetime }}" itemprop="datePublished">{{ page.published_at.strftime('%b %d, %Y') }}</time>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="e-content js-content yue inner" itemprop="articleBody">
+        {{ render_subject_content(site, page) }}
+        {% if page.type == 'page' %}
+          {% include "_snippets/page_qr.j2" %}
+        {% endif %}
+      </div>
+      <div class="inner">
+        {{ render_subject_authors(site, page) }}
+      </div>
+    </article>
+    <div class="inner">
+      <section class="entry-block">
+        {% include "_snippets/subject_share.j2" %}
+      </section>
+      {% if page.type != 'page' %}
+        <section class="entry-section">
+          {{ render_subject_license(site, page) }}
+        </section>
+      {% endif %}
+      <section class="entry-section">
+        {% include "_snippets/subject_foot.j2" %}
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}
