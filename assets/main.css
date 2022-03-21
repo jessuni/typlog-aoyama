@@ -41,7 +41,6 @@ a {
   padding: var(--aomori-padding-md);
   box-sizing: border-box;
 }
-
 .landing {
   display: flex;
   flex-flow: column-reverse nowrap;
@@ -238,7 +237,6 @@ a {
 .hero-tags a {
   margin-right: .5rem;
 }
-
 .hero-headline {
   flex: 1 1 auto;
 }
@@ -288,6 +286,9 @@ a {
   top: var(--aomori-padding-sm);
   margin: 0;
 }
+.landing .side-mark {
+  display: none;
+}
 .side-mark a {
   display: inline-flex;
   align-items: center;
@@ -297,10 +298,14 @@ a {
   height: 24px;
   margin-right: 0.25em;
 }
+.subject-list_inner {
+  padding-bottom: 3.75em;
+}
 .subject-list ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  max-width: 680px;
+  margin: 0 auto 0 0;
 }
 .subject-item {
   display: flex;
@@ -346,6 +351,9 @@ a {
   display: block;
   clear: both;
 }
+.extra .side-subject {
+  position: static;
+}
 .main .side-subject {
   margin-bottom: 4em;
 }
@@ -371,7 +379,7 @@ a {
     top: auto;
     font-size: 1.5em;
   }
-  .sticky .side-mark {
+  .main .side-mark {
     position: fixed;
     left: var(--aomori-padding-md);
     top: var(--aomori-padding-md);
@@ -381,6 +389,14 @@ a {
     margin-bottom: 0;
     margin-right: 2em;
     align-self: flex-end;
+  }
+  .extra .side-subject {
+    position: sticky;
+    left: 0;
+    top: calc(100vh - var(--aomori-padding-md) * 2 - 2rem);
+  }
+  .extra .subject-info {
+    display: none;
   }
   .subject-list {
     flex-grow: 1;
@@ -448,7 +464,7 @@ a {
   .main {
     display: flex;
   }
-  .sticky {
+  .main .side-subject {
     position: sticky;
     bottom: var(--aomori-padding-md);
     left: var(--aomori-padding-md);

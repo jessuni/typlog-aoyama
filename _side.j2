@@ -1,34 +1,34 @@
-<header class="side-subject {{ class }}">
-{% if type %}
-  {% if type == 'site' %}
-    <a href="{{ linkify('/') }}">
-  {% endif %}
-  {% set cover = None %}
-  {% if type == 'author' and subject.avatar %}
-    {% set cover = subject.avatar %}
-  {% elif subject.logo or subject.cover %}
-    {% set cover = subject.logo.src or subject.cover.src %}
-  {% endif %}
-  {% if cover %}
-    <img class="avatar" src="{{ cover|thumbnail('ss') }}" alt="{{ subject.name }} logo">
-  {% endif %}
-  <h1 class="subject-name">{{ subject.name or subject.title }}</h1>
-  {% if type == 'site' %}
-    </a>
-  {% endif %}
-  {% if subject.metadata %}
-    <ul>
-      {% for key, value in subject.metadata.items() %}
-        <li><a href="{{ value }}" target="_blank"><i class="icon icon-{{ key }}"></i></a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  {% set summary = subject.summary or subject.bio %}
-  {% if summary %}
-    <h2 class="subject-description">{{ summary }}</h2>
-  {% endif %}
-{% endif %}
-{% if not type or type == 'tag' or type == 'author' %}
+<header class="side-subject">
+  <div class="subject-info">
+    {% if type == 'site' %}
+      <a href="{{ linkify('/') }}">
+    {% endif %}
+    {% set cover = None %}
+    {% if type == 'author' and subject.avatar %}
+      {% set cover = subject.avatar %}
+    {% elif subject.logo or subject.cover %}
+      {% set cover = subject.logo.src or subject.cover.src %}
+    {% endif %}
+    {% if cover %}
+      <img class="avatar" src="{{ cover|thumbnail('ss') }}" alt="{{ subject.name }} logo">
+    {% endif %}
+    <h1 class="subject-name">{{ subject.name or subject.title }}</h1>
+    {% if type == 'site' %}
+      </a>
+    {% endif %}
+    {% if subject.metadata %}
+      <ul>
+        {% for key, value in subject.metadata.items() %}
+          <li><a href="{{ value }}" target="_blank"><i class="icon icon-{{ key }}"></i></a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% set summary = subject.summary or subject.bio %}
+    {% if summary %}
+      <h2 class="subject-description">{{ summary }}</h2>
+    {% endif %}
+  </div>
+{% if type == 'tag' or type == 'author' or type == 'site' %}
   <div class="side-mark">
     <a href="{{ linkify('/') }}">
     {% if site.logo %}

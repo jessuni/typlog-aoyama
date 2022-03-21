@@ -14,7 +14,6 @@
 
 {% block body %}
 <div class="snap-container">
-{% block landing %}
   <section class="section landing">
     {% set subject = site %}
     {% set type = 'site' %}
@@ -60,7 +59,6 @@
         </div>
     </div>
   </section>
-{% endblock %}
   <section class="section featured" id="featured-posts">
     <div class="featured-inner">
       <div class="featured-slider">
@@ -114,14 +112,15 @@
     </nav>
   </section>
   <section class="section extra" id="extra-posts">
-    {% set subject = site %}
     {% include "./_side.j2" %}
     <div class="subject-list">
-      {% set items = query.latest_subjects(count=4) %}
-      {% include "./_list.j2" %}
-      <nav class="subject-list_nav">
-        <a href="{{ linkify(site.posts_url) }}"><span>more</span><i class="icon icon-chevron_right"></i></a>
-      </nav>
+      <div class="subject-list_inner">
+        {% set items = query.latest_subjects(count=5) %}
+        {% include "./_list.j2" %}
+        <nav class="subject-list_nav">
+          <a href="{{ linkify(site.posts_url) }}"><span>more</span><i class="icon icon-chevron_right"></i></a>
+        </nav>
+      </div>
     </div>
   </section>
 </div>
