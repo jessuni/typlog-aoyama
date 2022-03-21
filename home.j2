@@ -117,7 +117,7 @@
     {% set subject = site %}
     {% include "./_side.j2" %}
     <div class="subject-list">
-      {% set items = query.latest_subjects(count=5) %}
+      {% set items = query.latest_subjects(count=4) %}
       {% include "./_list.j2" %}
       <nav class="subject-list_nav">
         <a href="{{ linkify(site.posts_url) }}"><span>more</span><i class="icon icon-chevron_right"></i></a>

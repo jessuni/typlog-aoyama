@@ -49,6 +49,15 @@ a {
 .side-subject a {
   color: var(--aomori-primary-color-hex);
 }
+.side-subject a:hover,
+.side-subject a:active {
+  color: var(--primary-color-hex);
+}
+.side-subject ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .avatar {
   object-fit: cover;
   border-radius: 50%;
@@ -339,7 +348,6 @@ a {
 }
 .main .side-subject {
   margin-bottom: 4em;
-  border-bottom: 1px;
 }
 .nav_prev {
   float: left;
@@ -363,6 +371,11 @@ a {
     top: auto;
     font-size: 1.5em;
   }
+  .sticky .side-mark {
+    position: fixed;
+    left: var(--aomori-padding-md);
+    top: var(--aomori-padding-md);
+  }
   .side-subject {
     flex: 0 0 40%;
     margin-bottom: 0;
@@ -371,6 +384,12 @@ a {
   }
   .subject-list {
     flex-grow: 1;
+  }
+  .subject-list_nav {
+    padding: 1em 0;
+  }
+  .site-links {
+    margin-bottom: 0;
   }
   .hero-cover + .hero-info .hero-headline__inner {
     display: flex;
