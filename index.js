@@ -1,33 +1,34 @@
-init(document.querySelector('.featured-slider'))
-
-function init(slider) {
+(function (slider) {
   if (!slider) return
   let index = 0
-  const sliderItems = document.querySelectorAll('.hero-wrap')
-  const maxIndex = sliderItems.length - 1
+  const sliderItems = slider.querySelectorAll('.hero-wrap')
   const prevBtn = document.getElementById('prev')
   const nextBtn = document.getElementById('next')
-  if (!prevBtn || !nextBtn) {
-    return
-  }
+  if (!sliderItems.length || !prevBtn || !nextBtn) return
+  const maxIndex = sliderItems.length - 1
 
   prevBtn.addEventListener('click', () => {
-    slide('right')
+    slide(slider, 'right')
   })
   nextBtn.addEventListener('click', () => {
-    slide('left')
+    slide(slider, 'left')
   })
 
-  function slide(direction = 'left') {
-    const step = direction === 'left' ? 1 : -1
-    index = index + step
-
+  function slide(slider, direction = 'left') {
+    index += direction === 'left' ? 1 : -1
     if (index < 0) {
       index = maxIndex
     } else if (index > maxIndex) {
       index = 0
     }
-    slider.style.transform = `translateX(${-100 * index}vw)`
+    const offset = slider.getBoundingClientRect().width * index
+    if (slider.scrollTo) {
+      slider.scrollTo({ left: offset, behavior: 'smooth' })
+    } else {
+      // IE polyfill
+      slider.scrollLeft = offset
+    }
   }
-}
+})(document.querySelector('.featured-inner'))
+
 

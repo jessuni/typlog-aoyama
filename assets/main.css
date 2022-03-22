@@ -16,6 +16,7 @@ body {
   padding: 0;
   margin: 0;
   font: 400 16px/1.15 var(--en-sans), var(--cjk-sans), var(--sys-sans), sans-serif;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -152,6 +153,7 @@ a {
 .featured-inner {
   overflow-x: scroll;
   overflow-y: hidden;
+  scroll-behavior: smooth;
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vw);
   scroll-snap-type: x mandatory;
@@ -163,7 +165,6 @@ a {
   flex-flow: row nowrap;
   width: inherit;
   height: inherit;
-  transition: transform ease-in-out 0.2s;
 }
 .featured-nav {
   position: absolute;
