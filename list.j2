@@ -11,14 +11,16 @@
   <div class="subject-list">
     {% set items = page.items %}
     {% include "./_list.j2" %}
-    <nav class="subject-list_nav">
-      {% if page.next_url %}
-      <a class="nav_prev" href="{{ linkify(page.next_url) }}"><span></span><i class="icon icon-chevron_left"></i>newer posts</a>
-      {% endif %}
-      {% if page.prev_url %}
-      <a class="nav_next" href="{{ linkify(page.prev_url) }}"><span>older posts</span><i class="icon icon-chevron_right"></i></a>
-      {% endif %}
-    </nav>
+    {% if page.next_url or page.prev_url %}
+      <nav class="subject-list_nav">
+        {% if page.next_url %}
+        <a class="nav_prev" href="{{ linkify(page.next_url) }}"><span></span><i class="icon icon-chevron_left"></i>newer posts</a>
+        {% endif %}
+        {% if page.prev_url %}
+        <a class="nav_next" href="{{ linkify(page.prev_url) }}"><span>older posts</span><i class="icon icon-chevron_right"></i></a>
+        {% endif %}
+      </nav>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
