@@ -301,7 +301,7 @@ a {
 }
 .section.extra {
   position: relative;
-  overflow: scroll;
+  height: auto;
 }
 .side-mark {
   font-weight: 700;
@@ -369,6 +369,9 @@ a {
   font-size: 0.875em;
   color: var(--aomori-meta-color-hex);
 }
+.subject-list_nav {
+  padding: 1em 0;
+}
 .subject-list_nav i {
   font-size: 10px;
   margin: 0 0.5rem;
@@ -415,13 +418,10 @@ a {
   .extra .side-subject {
     position: sticky;
     left: 0;
-    top: calc(100vh - var(--aomori-padding-md) * 2 - 2rem);
+    bottom: var(--aomori-padding-md);
   }
   .subject-list {
     flex-grow: 1;
-  }
-  .subject-list_nav {
-    padding: 1em 0;
   }
   .site-links {
     margin-bottom: 0;
