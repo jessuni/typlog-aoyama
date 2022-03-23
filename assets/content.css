@@ -761,7 +761,30 @@ h2.p-summary {
   text-decoration: none;
 }
 .e-content blockquote {
-  border-left: 4px solid rgb(var(--primary-color-rgb));
+  border: 0;
+  padding: 1em 2.4em;
+  margin: 2em 0;
+  color: var(--aomori-secondary-color-hex);
+  position: relative;
+}
+.e-content blockquote::before,
+.e-content blockquote::after {
+  font-size: 2em;
+  line-height: 1;
+  color: var(--aomori-primary-color-hex);
+  position: absolute;
+  font-family: var(--sys-serif), var(--cjk-serif), serif;
+  font-weight: 900;
+}
+.e-content blockquote::before {
+  content: '“';
+  left: 0;
+  top: 0;
+}
+.e-content blockquote::after {
+  content: '”';
+  right: 0;
+  bottom: 0;
 }
 .e-content twitter-widget {
   margin-left: auto;
