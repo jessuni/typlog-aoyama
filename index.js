@@ -5,6 +5,10 @@
   const prevBtn = document.getElementById('prev')
   const nextBtn = document.getElementById('next')
   if (!sliderItems.length || !prevBtn || !nextBtn) return
+  if (sliderItems.length === 1) {
+    prevBtn.style.display = 'hidden'
+    nextBtn.style.display = 'hidden'
+  }
   const maxIndex = sliderItems.length - 1
 
   prevBtn.addEventListener('click', () => {
