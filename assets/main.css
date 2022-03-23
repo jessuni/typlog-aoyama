@@ -1,6 +1,6 @@
 :root {
   --aomori-primary-color-hex: #333333;
-  --aomori-secondary-color-hex: #a1a1a1;
+  --aomori-secondary-color-hex: #888888;
   --aomori-meta-color-hex: #b6b6b6;
   --aomori-text-color-hex: #555555;
   --aomori-opac-mask-rgb: 0, 0, 0;
@@ -256,11 +256,9 @@ a {
   display: flex;
   flex-flow: column nowrap;
 }
-.hero-tags {
-  color: var(--aomori-meta-color-hex);
-  font-size: .96em;
-}
 .hero-tags a {
+  font-size: .96em;
+  color: var(--aomori-meta-color-hex);
   margin-right: .5rem;
 }
 .hero-tags a:before {
@@ -274,18 +272,29 @@ a {
 }
 .hero-headline h2 {
   margin: 1rem 0;
-  font-size: clamp(1.5em, 48 / 1280 * 100vw, 3em);
+  font-size: 3em;
   line-height: 1.15;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--aomori-primary-color-hex);
+  padding: 2rem 0;
+  border-top: 1rem solid currentColor;
+}
+.has-cover .hero-headline h2 {
+  font-size: clamp(1.5em, 48 / 1280 * 100vw, 3em);
+  padding: 0;
+  border: 0;
 }
 .hero-headline a {
   display: inline-block;
 }
 .hero-headline h3 {
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: 400;
+  color: var(--aomori-secondary-color-hex);
+}
+.has-cover .hero-headline h3 {
+  font-size: 1.25em;
   color: var(--aomori-primary-color-hex);
 }
 .hero-meta {
@@ -521,13 +530,19 @@ a {
     padding: 0;
   }
   .hero-info {
+    margin: 10vh 2rem;
+  }
+  .has-cover .hero-info {
     margin: 1rem 2rem;
   }
   .hero-headline h2 {
     margin: 1rem 0;
   }
   .hero-headline h3 {
-    font-size: 1rem;
+    font-size: 1.25em;
+  }
+  .has-cover .hero-headline h3 {
+    font-size: 1em;
   }
   .subject-item + .subject-item {
     margin-top: 2em;

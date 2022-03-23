@@ -73,7 +73,7 @@
           <div class="hero-wrap">
             {% if item.cover %}
               {% set layout = "horizontal" if item.cover.width > item.cover.height else "vertical" %}
-              <div class="hero {{ layout }}">
+              <div class="hero {{ layout }} has-cover">
             {% else %}
               <div class="hero">
             {% endif %}

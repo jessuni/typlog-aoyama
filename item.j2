@@ -16,10 +16,12 @@
 <div class="body">
   <div class="main _episode">
     <article role="main" class="h-entry" itemscope itemtype="http://schema.org/Article">
-      <div class="entry-hero">
-        {% if page.cover %}
+      {% if page.cover %}
+        <div class="entry-hero has-cover">
           <div class="entry-cover" style="background-image:url({{ page.cover.src|thumbnail('l') }})" aria-label="{{ page.title }}"></div>
-        {% endif %}
+      {% else %}
+        <div class="entry-hero">
+      {% endif %}
         <div class="entry-info">
           {% if page.type == 'audio' %}
             {% if page.season and page.episode %}
