@@ -12,7 +12,8 @@
   --en-sans: "Ubuntu";
   --sys-sans: -apple-system, BlinkMacSystemFont, Segoe UI,"Helvetica Neue", Arial;
   --cjk-sans: "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
-
+  --sys-serif: "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", "Times","Source Serif Pro";
+  --cjk-serif: "STSong", "STFangsong", "STHeiti", "STKaiti", "STLiti", "STXingkai", "STXinwei", "STFangsong", "STHeiti", "STLiti", "STXingkai", "STXinwei";
 
   --syntax-default: #24292f;
   --syntax-comment: #6e7781;
@@ -765,6 +766,18 @@ h2.p-summary {
 .e-content twitter-widget {
   margin-left: auto;
   margin-right: auto;
+}
+.e-content > p:first-of-type::first-letter {
+  font-weight: 800;
+  font-size: calc(2em * 1.62);
+  margin-right: 8px;
+  float: left;
+  line-height: 1;
+  text-rendering: geometricPrecision;
+  font-family: var(--sys-serif), var(--cjk-serif), serif;
+}
+.e-content > p:first-of-type {
+  margin-bottom: 2em;
 }
 .entry-block {
   position: relative;
