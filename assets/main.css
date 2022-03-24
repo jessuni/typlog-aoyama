@@ -48,6 +48,9 @@ a {
   flex-flow: column-reverse nowrap;
   position: relative;
 }
+.main {
+  min-height: 100vh;
+}
 .side-subject {
   margin-bottom: 4em;
 }
@@ -186,16 +189,6 @@ a {
   width: inherit;
   height: inherit;
 }
-.featured-nav {
-  position: absolute;
-  left: 5%;
-  right: 5%;
-  transform: translateY(-50%);
-  top: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .featured-nav button {
   width: 3rem;
   height: 3rem;
@@ -207,13 +200,20 @@ a {
   transition: background-color 0.2s linear;
   visibility: visible;
   opacity: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .featured-nav button:hover,
 .featured-nav button:active {
   background-color: rgba(var(--aomori-opac-mask-rgb), 0.8);
+}
+#prev {
+  left: 5%;
+}
+#next {
+  right: 5%;
 }
 .hero-wrap {
   scroll-snap-align: start;
