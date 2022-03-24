@@ -28,6 +28,7 @@ a {
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;
+  scroll-padding: 0 0 100vh;
   overflow-y: scroll;
   height: 100vh;
 }
