@@ -666,10 +666,18 @@ li.task-item {
   color: var(--aomori-meta-color-hex);
   display: inline-flex;
   text-decoration: none;
-  margin-right: .5rem;
 }
 .entry-tags a {
   font-size: .96em;
+  margin-right: .5rem;
+}
+.entry-meta_authors {
+  display: flex;
+  flex-flow: row wrap;
+}
+.entry-meta_authors .p-author + .p-author::before {
+  content: ', ';
+  margin-right: 4px;
 }
 .entry-tags a:before {
   content: "#";
@@ -812,12 +820,29 @@ h2.p-summary {
 .entry-authors {
   margin-top: 2em;
   margin-bottom: 2em;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
 }
 .entry-authors .p-author {
   display: flex;
+  margin: 0.5em 0;
 }
-.entry-authors .p-author + .p-author {
-  margin-top: 1em;
+.p-author.h-card::before {
+  content: '&';
+  font-size: 3em;
+  font-family: var(--sys-serif), serif;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.1);
+  width: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  user-select: none;
+  line-height: 1em;
+}
+.p-author.h-card:first-of-type::before {
+  content: 'by';
 }
 .entry-authors .author_image {
   display: block;

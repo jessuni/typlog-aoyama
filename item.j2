@@ -64,19 +64,19 @@
           {% include "_snippets/page_qr.j2" %}
         {% endif %}
       </div>
-      <div class="inner">
-        {{ render_subject_authors(site, page) }}
-      </div>
     </article>
     <div class="inner">
       <section class="entry-block">
         {% include "_snippets/subject_share.j2" %}
       </section>
-      {% if page.type != 'page' %}
+      {% if page.type != 'page' and page.license %}
         <section class="entry-section">
           {{ render_subject_license(site, page) }}
         </section>
       {% endif %}
+      <div class="entry-block">
+        {{ render_subject_authors(site, page) }}
+      </div>
       <section class="entry-section">
         {% include "_snippets/subject_foot.j2" %}
       </section>
