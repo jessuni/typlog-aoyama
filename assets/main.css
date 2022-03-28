@@ -28,7 +28,6 @@ a {
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;
-  scroll-padding: 0 0 100vh;
   overflow-y: scroll;
   height: 100vh;
 }
@@ -322,6 +321,7 @@ a {
 .section.extra {
   position: relative;
   height: auto;
+  scroll-margin-bottom: 20vh;
 }
 .side-mark {
   font-weight: 700;
