@@ -1,4 +1,5 @@
-(function (slider) {
+(function () {
+  const slider = document.querySelector('.featured-inner')
   if (!slider) return
   let index = 0
   const sliderItems = slider.querySelectorAll('.hero-wrap')
@@ -16,8 +17,6 @@
   nextBtn.addEventListener('click', () => {
     slide(slider, 'left')
   })
-
-
 
   function slide(slider, direction = 'left') {
     const _direction = direction === 'left' ? 1 : -1
@@ -67,6 +66,13 @@
       animationId = window.requestAnimationFrame(step)
     }
   }
-})(document.querySelector('.featured-inner'))
+})()
+
+
+
+
+
+
+
 
 

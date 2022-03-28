@@ -408,6 +408,9 @@ a {
 .nav_next {
   float: right;
 }
+.typlog-foot {
+  scroll-snap-align: start;
+}
 /* PC */
 @media (min-width: 768px) {
   .landing {
