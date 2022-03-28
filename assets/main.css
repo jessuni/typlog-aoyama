@@ -205,6 +205,10 @@ a {
   top: 50%;
   transform: translateY(-50%);
 }
+.featured-nav button:disabled {
+  visibility: hidden;
+  opacity: 0;
+}
 .featured-nav button:hover,
 .featured-nav button:active {
   background-color: rgba(var(--aomori-opac-mask-rgb), 0.8);
