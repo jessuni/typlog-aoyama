@@ -244,6 +244,7 @@ a {
   color: var(----primary-color-hex);
 }
 .hero.horizontal {
+  padding-bottom: min(56px,max(36px, 4vh));
   padding-bottom: clamp(36px, 4vh, 56px);
 }
 .hero-cover {
@@ -285,6 +286,7 @@ a {
   border-top: 1rem solid currentColor;
 }
 .has-cover .hero-headline h2 {
+  font-size: min(3em, max(1.5em, 48 /1280 * 100vw));
   font-size: clamp(1.5em, 48 / 1280 * 100vw, 3em);
   padding: 0;
   border: 0;
@@ -459,6 +461,7 @@ a {
   }
   .hero.horizontal h2 {
     flex: 1 0 40%;
+    max-height: calc(40vh - min(56px, max(36px, 4vh)) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
     max-height: calc(40vh - clamp(36px, 4vh, 56px) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
     overflow: hidden;
   }
