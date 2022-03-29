@@ -1020,8 +1020,11 @@ h2.p-summary {
   background: rgb(232, 91, 70);
 }
 @media (max-width: 680px) {
-  h2.p-summary {
+  .has-cover h2.p-summary {
     font-size: 1rem;
+  }
+  h2.p-summary {
+    font-size: 1.25rem;
   }
   .prev-subject h3 {
     font-size: 1.2em;
