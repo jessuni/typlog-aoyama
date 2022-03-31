@@ -69,7 +69,7 @@
   <section class="section featured" id="featured-posts">
     <div class="featured-inner">
       <div class="featured-slider">
-        {% for item in query.latest_subjects(count=5, contains=['authors', 'tags']) %}
+        {% for item in query.featured_subjects(count=10, contains=['authors', 'tags']) | sort(attribute = "published_at", reverse = True) %}
           <div class="hero-wrap">
             {% if item.cover %}
               {% set layout = "horizontal" if item.cover.width > item.cover.height else "vertical" %}

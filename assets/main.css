@@ -466,7 +466,8 @@ a {
     overflow: hidden;
   }
   .hero.horizontal h3 {
-    flex: 1 1 50%;
+    flex: 1 1 30%;
+    margin-left: 5%;
     text-align: right;
   }
   .hero.vertical {
