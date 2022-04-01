@@ -8,6 +8,7 @@
   --aomori-light-rgb: 255, 255, 255;
   --aomori-padding-md: 100px;
   --aomori-padding-sm: 2em;
+  --aomori-full-height: 100vh;
 
   --en-sans: "Ubuntu";
   --sys-sans: -apple-system, BlinkMacSystemFont, Segoe UI,"Helvetica Neue", Arial;
@@ -630,7 +631,7 @@ li.task-item {
 }
 .entry-hero {
   margin-bottom: 20px;
-  height: 100vh;
+  height: var(--aomori-full-height);
   width: 100vw;
   display: flex;
   flex-flow: column nowrap;

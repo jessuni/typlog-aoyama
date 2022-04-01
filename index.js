@@ -1,4 +1,12 @@
 (function () {
+  // mobile viewport height fix
+  const appHeight = () => {
+    document.documentElement.style.setProperty('--aomori-full-height', `${window.innerHeight}px`)
+}
+  window.addEventListener('resize', appHeight)
+  appHeight()
+
+  // feature slider
   const slider = document.querySelector('.featured-inner')
   if (!slider) return
   let index = 0
