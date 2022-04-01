@@ -114,8 +114,8 @@
       </div>
     </div>
     <nav class="featured-nav">
-      <button id="prev" type="button" aria-label="view previous post" title="view previous post" disabled><i class="icon icon-chevron_left"></i></button>
-      <button id="next" type="button" aria-label="view next post" title="view next post" disabled><i class="icon icon-chevron_right"></i></button>
+      <button id="prev" type="button" aria-label="view previous post" title="view previous post" disabled><i class="icon icon-chevron-left"></i></button>
+      <button id="next" type="button" aria-label="view next post" title="view next post" disabled><i class="icon icon-chevron-right"></i></button>
     </nav>
   </section>
   <section class="section extra" id="extra-posts">
@@ -125,7 +125,7 @@
         {% set items = query.latest_subjects(count=5) %}
         {% include "./_list.j2" %}
         <nav class="subject-list_nav">
-          <a href="{{ linkify(site.posts_url) }}"><span>more</span><i class="icon icon-chevron_right"></i></a>
+          <a href="{{ linkify(site.posts_url) }}"><span>more</span><i class="icon icon-chevron-right"></i></a>
         </nav>
       </div>
     </div>
