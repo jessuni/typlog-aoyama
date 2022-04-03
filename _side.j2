@@ -6,8 +6,10 @@
     {% set cover = None %}
     {% if type == 'author' and subject.avatar %}
       {% set cover = subject.avatar %}
-    {% elif subject.logo or subject.cover %}
-      {% set cover = subject.logo.src or subject.cover.src %}
+    {% elif subject.logo %}
+      {% set cover = subject.logo.src %}
+    {% elif subject.cover %}
+      {% set cover = subject.cover.src %}
     {% endif %}
     {% if cover %}
       <img class="avatar" src="{{ cover|thumbnail('ss') }}" alt="{{ subject.name }} logo">
