@@ -16,7 +16,7 @@
 body {
   padding: 0;
   margin: 0;
-  font: 400 16px/1.15 var(--en-sans), var(--cjk-sans), var(--sys-sans), sans-serif;
+  font: 400 16px/1.36 var(--en-sans), var(--cjk-sans), var(--sys-sans), sans-serif;
   scroll-behavior: smooth;
 }
 a {
@@ -245,20 +245,20 @@ a {
   color: var(----primary-color-hex);
 }
 .hero.horizontal {
-  padding-bottom: min(56px,max(36px, 4vh));
-  padding-bottom: clamp(36px, 4vh, 56px);
+  padding-bottom: min(56px,max(var(--aomori-padding-sm), 4vh));
+  padding-bottom: clamp(var(--aomori-padding-sm), 4vh, 56px);
 }
 .hero-cover {
   display: block;
   background: center / cover #eeeeee no-repeat;
   flex-shrink: 0;
   width: 100%;
-  height: 0;
-  padding-bottom: 60vh;
+  height: 60vh;
+  flex: 1 1 60%;
 }
 .hero-info {
   margin: 2rem 0 0;
-  flex: 1 1 auto;
+  flex: 1 1 40%;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -463,8 +463,8 @@ a {
   }
   .hero.horizontal h2 {
     flex: 1 0 40%;
-    max-height: calc(40vh - min(56px, max(36px, 4vh)) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
-    max-height: calc(40vh - clamp(36px, 4vh, 56px) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
+    max-height: calc(40vh - min(56px, max(var(--aomori-padding-sm), 4vh)) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
+    max-height: calc(40vh - clamp(var(--aomori-padding-sm), 4vh, 56px) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
     overflow: hidden;
   }
   .hero.horizontal h3 {
@@ -547,7 +547,7 @@ a {
     margin: 10vh 2rem;
   }
   .has-cover .hero-info {
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 0;
   }
   .hero-headline h2 {
     margin: 1rem 0;
