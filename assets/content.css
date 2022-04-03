@@ -598,7 +598,8 @@ table.highlight td[data-line]:before {
 }
 .toc a {
   border: 0;
-  opacity: 0.8;
+  text-decoration: none;
+  color: var(--aomori-text-color-hex);
 }
 .toc a:hover {
   color: inherit;
