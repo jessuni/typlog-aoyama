@@ -463,8 +463,6 @@ a {
   }
   .hero.horizontal h2 {
     flex: 1 0 40%;
-    max-height: calc(40vh - min(56px, max(var(--aomori-padding-sm), 4vh)) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
-    max-height: calc(40vh - clamp(var(--aomori-padding-sm), 4vh, 56px) - 100px - 2rem - 1.15rem - 2rem - 0.96 * 1.15rem);
     overflow: hidden;
   }
   .hero.horizontal h3 {

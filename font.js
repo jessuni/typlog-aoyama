@@ -1,11 +1,12 @@
 function resizeFont() {
   const heroHeadings = document.querySelectorAll('.hero-headline h2')
+  const parent = document.querySelector('.hero-headline')
 
   heroHeadings.forEach(el => {
     if (el.style.fontSize) {
       el.style.fontSize = ''
     }
-    const maxHeight = el.offsetHeight
+    const maxHeight = parent.offsetHeight - parseInt(getComputedStyle(el).marginTop, 10) * 2
     const text = el.firstChild
     const height = text.offsetHeight
     if (height > maxHeight) {
