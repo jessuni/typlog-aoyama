@@ -387,6 +387,7 @@ a {
   font-weight: 400;
   flex-grow: 1;
   line-height: 1.35;
+  color: var(--aomori-text-color-hex);
 }
 .subject-item_time {
   font-size: 0.875em;
