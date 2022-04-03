@@ -933,6 +933,9 @@ h2.p-summary {
 .entry-section {
   padding: var(--aomori-padding-sm) 0;
 }
+.entry-section.subscribe {
+  background: rgba(var(--aomori-opac-mask-rgb), 0.03);
+}
 .entry-section a {
   color: currentColor;
 }
