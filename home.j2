@@ -26,13 +26,20 @@
     {% include "./_side.j2" %}
     <div class="site-links">
       {% if site.primary_links %}
-        <nav class="site-nav">
-          <ul>
-          {% for nav in site.primary_links %}
-            <li><a href="{{ nav.url }}" {% if nav.blank %} target="_blank"{% endif %}>{{ nav.title }}</a></li>
-          {% endfor %}
-          </ul>
-        </nav>
+        <div class="site-nav">
+          <button id="menu" type="button" class="site-nav_button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M3 7a1 1 0 1 0 0 2h24a1 1 0 1 0 0-2H3zm0 7a1 1 0 1 0 0 2h24a1 1 0 1 0 0-2H3zm0 7a1 1 0 1 0 0 2h24a1 1 0 1 0 0-2H3z"/></svg></button>
+          <nav class="site-nav_list">
+            <ul class="site-nav_dropdown">
+            {% for nav in site.primary_links %}
+              <li><a href="{{ nav.url }}" {% if nav.blank %} target="_blank"{% endif %}>{{ nav.title }}</a></li>
+            {% endfor %}
+            </ul>
+          </nav>
+          <div class="site-nav_mask">
+            <button type="button" class="site-nav_close">
+              <svg viewBox="0 0 24 24"><path class="a" d="M.75 23.249l22.5-22.5M23.25 23.249L.75.749"></path></svg></button>
+          </div>
+        </div>
       {% endif %}
       {% if site.podcast %}
         <ul class="site-podcast">
