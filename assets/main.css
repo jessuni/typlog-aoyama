@@ -204,7 +204,8 @@ a {
   animation: slide 1s ease-in forwards 5;
 }
 .featured {
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
   position: relative;
 }
 .featured-inner {
