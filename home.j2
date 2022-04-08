@@ -131,11 +131,9 @@
       <div class="subject-list_inner">
         {% set items = query.latest_subjects(count=5) %}
         {% include "./_list.j2" %}
-        {% if site.posts_url %}
         <nav class="subject-list_nav">
-          <a href="{{ linkify(site.posts_url) }}"><span>more</span><i class="icon icon-chevron-right"></i></a>
+          <a href="{{ linkify('/archive/') }}"><span>more</span><i class="icon icon-chevron-right"></i></a>
         </nav>
-        {% endif %}
       </div>
     </div>
   </section>
