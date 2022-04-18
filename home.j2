@@ -18,9 +18,15 @@
 <script src="{{ static_url }}index.js"></script>
 {% endblock %}
 
+{% set config = query.config('typlog-aoyama') %}
 {% block body %}
 <div class="snap-container">
   <section class="section landing">
+    {% if config and config.video_cover %}
+      <div class="video-cover">
+        <video src="{{ config.video_cover.src }}" poster="{{ config.video_cover.poster }}" muted="muted" preload loop></video>
+      </div>
+    {% endif %}
     {% set subject = site %}
     {% set type = 'site' %}
     {% include "./_side.j2" %}
