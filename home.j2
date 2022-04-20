@@ -18,13 +18,15 @@
 <script src="{{ static_url }}index.js"></script>
 {% endblock %}
 
-{% set config = query.config('typlog-aoyama') %}
+{% set aoyama = query.config('aoyama') %}
 {% block body %}
 <div class="snap-container">
   <section class="section landing">
-    {% if config and config.video_cover %}
+    {% if aoyama and aoyama.video_cover %}
       <div class="video-cover">
-        <video src="{{ config.video_cover.src }}" poster="{{ config.video_cover.poster }}" muted="muted" preload loop></video>
+        <video poster="{{ aoyama.video_cover.poster }}" muted preload autoplay loop>
+          <source src="{{ aoyama.video_cover.src }}" type="video/{{aoyama.video_cover.type}}">
+        </video>
       </div>
     {% endif %}
     {% set subject = site %}
