@@ -15,10 +15,10 @@
 {% set subject = page.topic %}
 {% set type = page.type %}
 <div class="main">
-  {% include "./_side.j2" %}
+  {% include "./_partials/side.j2" %}
   <div class="subject-list">
     {% set items = page.items %}
-    {% include "./_list.j2" %}
+    {% include "./_partials/list.j2" %}
     {% if page.next_url or page.prev_url %}
       <nav class="subject-list_nav">
         {% if page.next_url %}
