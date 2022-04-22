@@ -7,6 +7,12 @@
   "version": "0.1.4",
   "author": "Jessie Ji",
   "tags": ["blog","podcast"],
+  "preview": "https://aoyama.typlog.com/",
+  "templates": [
+    "home.j2",
+    "item.j2",
+    "list.j2"
+  ],
   "images": [
     "https://user-images.githubusercontent.com/290496/161203111-d93435a0-c69d-4ed2-a810-f39f3550353e.jpg"
   ]
