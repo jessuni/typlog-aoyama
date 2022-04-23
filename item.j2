@@ -1,9 +1,12 @@
 {% from "macros.j2" import render_subject_content, render_subject_license, render_subject_authors %}
 
 {% block style %}
+<link rel="stylesheet" href="{{ static_url }}assets/common.css">
+<link rel="stylesheet" href="{{ static_url }}assets/syntax.css">
 <link rel="stylesheet" href="{{ static_url }}assets/content.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="{{ static_url }}assets/mode.js"></script>
 <!--
   *********
   Theme: Aoyama(https://github.com/jessuni/typlog-aoyama)
@@ -12,6 +15,7 @@
   *********
 -->
 {% endblock %}
+
 {% block body %}
 <div class="body">
   <div class="main _episode">

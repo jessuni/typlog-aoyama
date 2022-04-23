@@ -1,0 +1,43 @@
+:root,
+.light-theme {
+  --aomori-invert-rgb: 0, 0, 0;
+  --aomori-bg-rgb: 255, 255, 255;
+
+  --aomori-primary-color: rgba(var(--aomori-invert-rgb), 0.8);
+  --aomori-secondary-color: rgba(var(--aomori-invert-rgb), 0.6);
+  --aomori-meta-color: rgba(var(--aomori-invert-rgb), 0.33);
+  --aomori-text-color: rgba(var(--aomori-invert-rgb), 0.72);
+  --aomori-bg: rgb(var(--aomori-bg-rgb));
+
+  --aomori-padding-md: 100px;
+  --aomori-padding-sm: 2em;
+  --aomori-full-height: 100vh;
+
+  --en-sans: "Ubuntu";
+  --sys-sans: -apple-system, BlinkMacSystemFont, Segoe UI,"Helvetica Neue", Arial;
+  --cjk-sans: "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
+  --sys-serif: "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", "Times","Source Serif Pro";
+  --cjk-serif: "STSong", "STFangsong", "STHeiti", "STKaiti", "STLiti", "STXingkai", "STXinwei", "STFangsong", "STHeiti", "STLiti", "STXingkai", "STXinwei";
+}
+.dark-theme {
+  --aomori-invert-rgb: 255, 255, 255;
+  --aomori-bg-rgb: 0, 0, 0;
+  --aomori-bg: #322c39;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font: 400 16px/1.36 var(--en-sans), var(--cjk-sans), var(--sys-sans), sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  background: var(--aomori-bg);
+  color: var(--aomori-text-color);
+  transition: background linear 0.3s;
+}
+.dark-theme .hero-cover,
+.dark-theme .entry-cover,
+.dark-theme img {
+  filter: brightness(0.9);
+}
+
