@@ -112,19 +112,20 @@ a {
   position: static;
   color: var(--aomori-primary-color);
 }
-.site-links a {
-  transition: color 0.2s linear;
-}
 .site-nav {
   flex-grow: 1;
 }
 .site-links a {
   color: var(--aomori-primary-color);
-  transition: color linear 0.1s;
+  padding: 0.5em 0.2em;
+  background: transparent;
+  border-radius: 3px;
+  transition: color 0.2s linear, background 0.2s linear;
 }
 .site-links a:hover,
 .site-links a:active {
   color: var(--primary-color-hex);
+  background: rgba(var(--aomori-bg-rgb), 0.4);
 }
 .site-nav a:active::before,
 .site-nav a:hover::before {
@@ -180,7 +181,7 @@ a {
   display: flex;
 }
 .site-podcast .icon,
-.js-search,
+.js-search i,
 .site-social .icon {
   padding: 0.5em;
 }
@@ -236,7 +237,7 @@ a {
   visibility: visible;
   opacity: 1;
   position: absolute;
-  z-index: 2;
+  z-index: 11;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -588,7 +589,7 @@ a {
     bottom: auto;
     padding: 1em;
     border-radius: 3px;
-    z-index: 2;
+    z-index: 11;
   }
   ._open .site-nav_mask {
     width: 100vw;
@@ -597,11 +598,15 @@ a {
     left: 0;
     top: 0;
     background-color: var(--aomori-bg);
-    z-index: 1;
+    z-index: 10;
     display: block;
     padding: var(--aomori-padding-md) var(--aomori-padding-sm) var(--aomori-padding-sm);
     box-sizing: border-box;
   }
+  .site-links a:hover,
+  .site-links a:active {
+  background: transparent;
+}
   .hero {
     padding: 0;
   }
