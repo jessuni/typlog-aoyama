@@ -120,7 +120,7 @@ a {
   padding: 0.5em 0.2em;
   background: transparent;
   border-radius: 3px;
-  transition: color 0.2s linear, background 0.2s linear;
+  transition: color 0.2s linear, background 0.1s linear;
 }
 .site-links a:hover,
 .site-links a:active {
@@ -331,6 +331,10 @@ a {
 .hero-headline a {
   display: inline-block;
 }
+.hero-headline a:hover,
+.hero-headline a:active {
+  color:var(--primary-color-hex);
+}
 .hero-headline h3 {
   font-size: 1.5em;
   font-weight: 400;
@@ -344,6 +348,10 @@ a {
   color: var(--aomori-meta-color);
   overflow: auto;
   font-size: 1rem;
+}
+.hero-meta a:hover,
+.hero-meta a:active {
+  color: var(--aomori-primary-color);
 }
 .hero-meta::before,
 .hero-meta::after {
@@ -399,6 +407,13 @@ a {
 .subject-item + .subject-item {
   margin-top: 3.75em;
 }
+.subject-item a {
+  transition: color 0.2s linear;
+}
+.subject-item a:hover,
+.subject-item a:active {
+  color: var(--primary-color-hex);
+}
 .subject-item_cover {
   width: 100px;
   height: 100px;
@@ -432,6 +447,13 @@ a {
 .subject-list_nav {
   padding: 1em 0;
   color: var(--aomori-text-color);
+}
+.subject-list_nav a {
+  transition: color 0.2s linear;
+}
+.subject-list_nav a:hover,
+.subject-list_nav a:active {
+  color: var(--primary-color-hex);
 }
 .subject-list_nav i {
   font-size: 10px;
