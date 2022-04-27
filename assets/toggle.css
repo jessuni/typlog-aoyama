@@ -4,9 +4,20 @@
   color: rgb(var(--aomori-invert-rgb));
 }
 .theme-toggle > input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
   position: absolute;
-  opacity: 0;
-  top: -200px;
+  width: 1px;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.theme-toggle > input:focus + label {
+  outline: 5px auto Highlight;
+  outline: 5px auto -webkit-focus-ring-color;
 }
 .theme-toggle > label {
   position: relative;
