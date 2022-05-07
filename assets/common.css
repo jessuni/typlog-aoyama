@@ -1,5 +1,6 @@
 :root,
 .light-theme {
+  color-scheme: light;
   --aomori-invert-rgb: 0, 0, 0;
   --aomori-bg-rgb: 255, 255, 255;
 
@@ -18,11 +19,25 @@
   --cjk-sans: "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
   --sys-serif: "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", "Times","Source Serif Pro";
   --cjk-serif: "STSong", "STFangsong", "STHeiti", "STKaiti", "STLiti", "STXingkai", "STXinwei", "STFangsong", "STHeiti", "STLiti", "STXingkai", "STXinwei";
+
+  --tc-c-divider: rgba(var(--aomori-invert-rgb), 0.1);
+  --tc-c-border: var(--aomori-meta-color);
+  --tc-c-reply: var(--aomori-bg);
+  --tc-c-reply-bg: var(--primary-color-hex);
+  --tc-br-reply: 0px;
+  --tc-c-link: var(--primary-color-hex);
+  --tc-c-link-hover: var(--aomori-secondary-color);
+  --tc-c-primary: var(--primary-color-hex);
+  --tc-f-input: var(--en-sans), var(--cjk-sans), var(--sys-sans);
+  --tc-f-reply: var(--en-sans), var(--cjk-sans), var(--sys-sans);
+  --tc-pe-content: none;
+
 }
 .dark-theme {
+  color-scheme: dark;
   --aomori-invert-rgb: 255, 255, 255;
   --aomori-bg-rgb: 0, 0, 0;
-  --aomori-bg: #322c39;
+  --aomori-bg: #28232f;
 }
 
 body {
