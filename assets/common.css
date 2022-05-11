@@ -50,6 +50,9 @@ body {
   color: var(--aomori-text-color);
   transition: background linear 0.3s;
 }
+::selection {
+  background: rgba(var(--primary-color-rgb),0.2);
+}
 .dark-theme .hero-cover,
 .dark-theme .entry-cover,
 .dark-theme img {
