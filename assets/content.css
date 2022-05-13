@@ -36,7 +36,9 @@
 .yue p {
   margin-top: 0;
   margin-bottom: 1.12em;
-  hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens:none;
+  -ms-hyphens:none;
 }
 .yue a {
   color: var(--primary-color-hex);
@@ -243,6 +245,23 @@
   text-emphasis: none;
 }
 
+.md-photo,
+.md-photo.gallery {
+  max-width: 720px;
+}
+.gallery figure {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.gallery .gallery_column figcaption {
+  position: static;
+  text-align: center;
+  color: rgba(var(--aomori-invert-rgb), 0.52);
+  opacity: 1;
+}
+.gallery .gallery_column figure:hover figcaption {
+  opacity: 1;
+}
 table.highlight {
   border-collapse: collapse;
   width: 100%;
@@ -563,6 +582,11 @@ h2.p-summary {
 }
 .e-content > p:first-of-type {
   margin-bottom: 2em;
+}
+.e-content > .photo {
+  max-width:760px;
+  padding-left:18px;
+  padding-right:18px;
 }
 .entry-block {
   position: relative;
