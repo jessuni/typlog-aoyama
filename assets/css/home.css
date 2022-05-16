@@ -533,6 +533,7 @@ a {
     width: auto;
     height: auto;
     padding: 0;
+    margin-right: 2rem;
   }
   .hero.vertical .hero-info {
     margin: 0;
