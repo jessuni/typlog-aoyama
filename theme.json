@@ -4,15 +4,9 @@
   "name#ja": "青山",
   "description": "A typlog theme that mimics magazine. It provides extra exposure for your featured articles/episodes and is best suited for showcasing posts with covers.",
   "repo": "jessuni/typlog-aoyama",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Jessie Ji",
   "tags": ["blog","podcast"],
-  "preview": "https://aoyama.typlog.com/",
-  "templates": [
-    "home.j2",
-    "item.j2",
-    "list.j2"
-  ],
   "images": [
     "https://user-images.githubusercontent.com/290496/161203111-d93435a0-c69d-4ed2-a810-f39f3550353e.jpg"
   ]
