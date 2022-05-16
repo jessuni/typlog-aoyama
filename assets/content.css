@@ -759,7 +759,7 @@ h2.p-summary {
   text-decoration: none;
   color: rgba(var(--aomori-invert-rgb), 0.7);
   background-color: transparent;
-  border: 3px solid rgba(0, 0, 0, 0.1);
+  border: 3px solid rgba(var(--aomori-invert-rgb), 0.2);
   line-height: 30px;
   font-size: 13px;
   font-weight: 600;
