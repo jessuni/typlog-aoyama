@@ -1,0 +1,22 @@
+{
+  "name": "typlog-aoyama",
+  "version": "0.1.5",
+  "description": "A typlog theme that mimics magazine. It provides extra exposure for your featured articles/episodes and is best suited for showcasing posts with covers.",
+  "scripts": {
+    "build": "npm run build:home&&npm run build:content",
+    "build:home": "esbuild assets/css/index.css --bundle --minify --outfile=assets/aoyama.css",
+    "build:content": "esbuild assets/css/content.css --bundle --minify --outfile=assets/aoyama_content.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessuni/typlog-aoyama.git"
+  },
+  "author": "Jessie <jessunix@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/jessuni/typlog-aoyama/issues"
+  },
+  "homepage": "https://theme-aoyama.typlog.io/",
+  "devDependencies": {
+    "esbuild": "^0.14.39"
+  }
+}

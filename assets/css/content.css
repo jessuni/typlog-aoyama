@@ -1,3 +1,6 @@
+@import "./common.css";
+@import "./syntax.css";
+
 .yue h1,
 .yue h2,
 .yue h3,
@@ -954,7 +957,7 @@ h2.p-summary {
   }
   to {
     opacity: 0;
-    tranform: scale(1);
+    transform: scale(1);
   }
 }
 button.enjoy {
