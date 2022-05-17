@@ -574,7 +574,9 @@ a {
 
 /* Mobile */
 @media (max-width: 628px) {
-  .landing,
+  .landing {
+    padding: var(--aomori-padding-sm);
+  }
   .extra,
   .main {
     padding: var(--aomori-padding-md) var(--aomori-padding-sm) var(--aomori-padding-sm);
@@ -623,7 +625,7 @@ a {
     background-color: var(--aomori-bg);
     z-index: 10;
     display: block;
-    padding: var(--aomori-padding-md) var(--aomori-padding-sm) var(--aomori-padding-sm);
+    padding: var(--aomori-padding-sm);
     box-sizing: border-box;
   }
   .site-links a:hover,
