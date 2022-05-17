@@ -25,7 +25,7 @@
     {% if aoyama and aoyama.video_cover %}
       <div class="video-cover">
         <video poster="{{ aoyama.video_cover.poster }}" muted preload autoplay loop playsinline>
-          <source src="{{ aoyama.video_cover.src }}" type="video/{{aoyama.video_cover.type}}">
+          <source src="{{ aoyama.video_cover.src }}" type="{{aoyama.video_cover.type}}">
         </video>
       </div>
     {% endif %}
