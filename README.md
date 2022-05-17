@@ -6,7 +6,7 @@ A typlog theme that mimics magazine. It provides extra exposure for your feature
 
 ## Features
 
-- One page scroll
+- 📜 One-page scroll
 - 📌 [Featured posts](#featured-posts)
 - 🌓 [Dark mode](#dark-mode)
 - 🎥 [Motion background](#motion-backgroundbeta)
