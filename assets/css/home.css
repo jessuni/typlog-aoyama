@@ -417,6 +417,7 @@ a {
 .subject-item_cover {
   width: 100px;
   height: 100px;
+  flex-shrink: 0;
   object-fit: cover;
   margin-right: 1.5em;
 }
