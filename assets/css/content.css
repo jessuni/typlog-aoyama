@@ -424,6 +424,7 @@ li.task-item {
   top: var(--aomori-padding-sm);
   width: 100%;
   background: transparent;
+  box-sizing: border-box;
 }
 .entry-nav a {
   font-family: avenir next,var(--cjk-sans),sans-serif;
