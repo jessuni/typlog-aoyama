@@ -265,6 +265,14 @@
 .gallery .gallery_column figure:hover figcaption {
   opacity: 1;
 }
+.gallery + p > small {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--aomori-meta-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 table.highlight {
   border-collapse: collapse;
   width: 100%;
