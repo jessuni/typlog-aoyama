@@ -101,10 +101,21 @@
     }
   }
 
+  const checkVideoValidity = () => {
+    const video = document.querySelector('video')
+    const promise = video.play()
+    if (promise !== undefined) {
+      promise.then(_ => {}).catch(err => {
+        const img = video.querySelector('img')
+        video.parentNode.replaceChild(img, video)
+      })
+    }
+  }
   setAppHeight()
   window.addEventListener('resize', setAppHeight)
   initMenu()
   initSlider()
+  checkVideoValidity()
 })()
 
 
