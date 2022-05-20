@@ -164,7 +164,7 @@ a {
   display: none;
 }
 .site-links button {
-  border: 1px solid currentColor;
+  border: 1px solid var(--aomori-primary-color);
   background: none;
   color: var(--aomori-primary-color);
   border-radius: 3px;
