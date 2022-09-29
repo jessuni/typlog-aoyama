@@ -103,6 +103,7 @@
 
   const checkVideoValidity = () => {
     const video = document.querySelector('video')
+    if (!video) return
     const promise = video.play()
     if (promise !== undefined) {
       promise.then(_ => {}).catch(err => {
