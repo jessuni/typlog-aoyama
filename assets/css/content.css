@@ -430,9 +430,7 @@ li.task-item {
 .entry-nav {
   position: absolute;
   top: var(--aomori-padding-sm);
-  width: 100%;
   background: transparent;
-  box-sizing: border-box;
 }
 .entry-nav a {
   font-family: avenir next,var(--cjk-sans),sans-serif;
@@ -452,6 +450,8 @@ li.task-item {
   top: 0;
   left: 0;
   background-image: linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,0));
+  width: 100%;
+  box-sizing: border-box;
   padding: 24px 20px 40px;
 }
 .has-cover .entry-nav a {
