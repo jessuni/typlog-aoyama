@@ -1,6 +1,6 @@
 {
   "name": "typlog-aoyama",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "A typlog theme that mimics magazine. It provides extra exposure for your featured articles/episodes and is best suited for showcasing posts with covers.",
   "scripts": {
     "build": "npm run build:home&&npm run build:content",
