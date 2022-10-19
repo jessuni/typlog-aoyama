@@ -25,9 +25,9 @@
         {% endfor %}
       </ul>
     {% endif %}
-    {% set summary = subject.summary or subject.bio %}
+    {% set summary = subject.summary or subject.bio_html %}
     {% if summary %}
-      <h2 class="subject-description">{{ summary }}</h2>
+      <h2 class="subject-description">{{ summary | safe }}</h2>
     {% endif %}
   </div>
 {% if type == 'tag' or type == 'author' or type == 'site' %}
