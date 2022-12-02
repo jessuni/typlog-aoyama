@@ -658,6 +658,7 @@ h2.p-summary {
   text-align: center;
   user-select: none;
   line-height: 1em;
+  margin-right: 10px;
 }
 .p-author.h-card:first-of-type::before {
   content: 'by';
