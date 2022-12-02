@@ -112,7 +112,7 @@ a {
 .site-links ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 1.25em 0 0;
   position: static;
   color: var(--aomori-primary-color);
 }
@@ -181,15 +181,18 @@ a {
   color: var(--primary-color-hex);
   background-color: rgba(var(--primary-color-rgb), 0.1);
 }
-.site-podcast ul {
-  display: flex;
-}
 .site-podcast .icon,
 .js-search i,
 .site-social .icon {
+  width: 0.2em;
+  height: 0.2em;
   padding: 0.5em;
 }
-.site-podcast li + li,
+.site-podcast {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 .site-social a + a {
   margin-left: 1.5em;
 }
