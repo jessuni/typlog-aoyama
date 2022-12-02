@@ -9,5 +9,27 @@
   "tags": ["blog","podcast"],
   "images": [
     "https://user-images.githubusercontent.com/290496/161203111-d93435a0-c69d-4ed2-a810-f39f3550353e.jpg"
-  ]
+  ],
+  "messages": {
+    "subscribe": "Subscribe",
+    "subscribe#zh": "订阅",
+    "subscribe#ja": "メルマガ登録",
+    "subscribe#zh-hans": "订阅",
+    "subscribe#zh-hant": "訂閱",
+    "more": "more",
+    "more#zh": "更多",
+    "more#ja": "記事一覧",
+    "more#zh-hans": "更多",
+    "more#zh-hant": "更多",
+    "older_posts": "older",
+    "older_posts#zh": "更旧",
+    "older_posts#ja": "過去",
+    "older_posts#zh-hans": "更旧",
+    "older_posts#zh-hant": "更舊",
+    "newer_posts": "newer",
+    "newer_posts#zh": "更新",
+    "newer_posts#ja": "新しい",
+    "newer_posts#zh-hans": "更新",
+    "newer_posts#zh-hant": "更新"
+  }
 }

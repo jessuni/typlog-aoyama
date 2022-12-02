@@ -79,7 +79,7 @@
         </a>
       </div>
       <div class="site-subscribe">
-        <button class="js-subscribe">Subscribe</button>
+        <button class="js-subscribe">{{ translate('subscribe', site.primary_lang) }}</button>
       </div>
       {% include "./_partials/toggle.j2" %}
     </div>
@@ -156,7 +156,7 @@
         {% set items = query.latest_subjects(count=5) %}
         {% include "./_partials/list.j2" %}
         <nav class="subject-list_nav">
-          <a href="{{ linkify('/archive/') }}"><span>more</span><i class="icon icon-chevron-right"></i></a>
+          <a href="{{ linkify('/archive/') }}"><span>{{ translate('more', site.primary_lang) }}</span><i class="icon icon-chevron-right"></i></a>
         </nav>
       </div>
     </div>
