@@ -291,16 +291,15 @@ a {
 .hero-cover {
   display: block;
   background: center / cover #eeeeee no-repeat;
-  flex-shrink: 0;
   width: 100%;
   height: 60vh;
   flex: 1 1 60%;
 }
 .hero-info {
-  margin: 2rem 0 0;
   flex: 1 1 40%;
   display: flex;
   flex-flow: column nowrap;
+  box-sizing: border-box;
 }
 .hero-tags a {
   font-size: .96em;
@@ -542,6 +541,7 @@ a {
   }
   .hero.vertical .hero-info {
     margin: 0;
+    padding: 0;
     flex: 0 0 55%;
   }
   .hero.vertical .hero-headline {
@@ -637,14 +637,16 @@ a {
   .site-links a:active {
   background: transparent;
 }
-  .hero {
+  .hero,
+  .hero.horizontal,
+  .hero.vertical {
     padding: 0;
   }
-  .hero-info {
-    margin: 10vh 2rem;
-  }
   .has-cover .hero-info {
-    margin: 1rem 2rem 0;
+    padding-top: 1em;
+    padding-bottom: var(--aomori-padding-sm);
+    padding-left: var(--aomori-padding-sm);
+    padding-right: var(--aomori-padding-sm);
   }
   .hero-headline h2 {
     margin: 1rem 0;
