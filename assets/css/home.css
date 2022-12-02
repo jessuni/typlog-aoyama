@@ -373,6 +373,43 @@ a {
   height: auto;
   scroll-margin-bottom: 20vh;
 }
+.hr-border {
+  position: absolute;
+  background-color: rgba(15,23,42,.15);
+  height: 1px;
+  top: 0;
+  left: 32vw;
+  right: 32vw;
+  mask-image: linear-gradient(270deg,transparent,#fff 8vw,#fff calc(100% - 8vw),transparent);
+  -webkit-mask-image: linear-gradient(270deg,transparent,#fff 8vw,#fff calc(100% - 8vw),transparent);
+}
+.hr-gradient_wrap {
+  position: absolute;
+  left: 40vw;
+  bottom: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: -1px;
+  height: 2rem;
+  overflow: hidden;
+}
+.hr-gradient {
+  display: flex;
+  height: 2px;
+  width: 20vw;
+  margin-bottom: -1px;
+}
+.hr-gradient div {
+  background-image: linear-gradient(90deg,rgba(56,189,248,0),#0ea5e9 32.29%,rgba(236,72,153,.3) 67.19%,rgba(236,72,153,0));
+  width: 100%;
+}
+.hr-gradient_blur {
+  filter: blur(4px);
+}
+.hr-gradient_line {
+  filter: blur(1px);
+  margin-left: -100%;
+}
 .side-mark {
   font-weight: 700;
   text-transform: uppercase;
