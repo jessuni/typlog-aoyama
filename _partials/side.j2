@@ -6,15 +6,20 @@
     {% set cover = None %}
     {% if type == 'author' and subject.avatar %}
       {% set cover = subject.avatar %}
+    {# for site #}
     {% elif subject.logo %}
       {% set cover = subject.logo.src %}
+    {# for podcast #}
+    {% elif subject.image %}
+      {% set cover = subject.image %}
+    {# for post #}
     {% elif subject.cover %}
       {% set cover = subject.cover.src %}
     {% endif %}
     {% if cover %}
-      <img class="avatar" src="{{ cover|thumbnail('ss') }}" alt="{{ subject.name }} logo">
+      <img class="avatar" src="{{ cover|thumbnail('ss') }}" alt="{{ subject.title or subject.name }} logo">
     {% endif %}
-    <h1 class="subject-name">{{ subject.name or subject.title }}</h1>
+    <h1 class="subject-name">{{ subject.title or subject.name }}</h1>
     {% if type == 'site' %}
       </a>
     {% endif %}
