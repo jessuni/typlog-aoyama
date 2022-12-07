@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run build:home&&npm run build:content",
     "build:home": "esbuild assets/css/index.css --bundle --minify --outfile=assets/aoyama.css",
-    "build:content": "esbuild assets/css/content.css --bundle --minify --outfile=assets/aoyama_content.css"
+    "build:content": "esbuild assets/css/item.css --bundle --minify --outfile=assets/aoyama_content.css"
   },
   "repository": {
     "type": "git",
