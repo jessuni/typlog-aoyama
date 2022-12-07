@@ -54,10 +54,10 @@
       {% endif %}
       {% if site.podcast %}
         <ul class="site-podcast">
-          <li><a href="{{ linkify('/feed/audio.xml') }}" aria-label="RSS"><i class="icon icon-feed" aria-hidden="true"></i></a></li>
+          <li><a href="{{ linkify('/feed/audio.xml') }}" aria-label="RSS" title="RSS"><i class="icon icon-feed" aria-hidden="true"></i></a></li>
           {% for item in site.podcast.links %}
             <li>
-              <a href="{{ linkify(item.url) }}"{% if item.blank %} target="_blank"{% endif %}><i class="icon icon-{{ item.icon }}"></i>
+              <a href="{{ linkify(item.url) }}"{% if item.blank %} target="_blank"{% endif %} title="{{ item.title }}" aria-label="{{ item.title }}"><i class="icon icon-{{ item.icon }}" aria-hidden="true"></i>
               </a>
             </li>
           {% endfor %}
