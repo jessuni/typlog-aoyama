@@ -18,13 +18,11 @@
 <div class="body">
   <div class="main _episode">
     <article role="main" class="h-entry" itemscope itemtype="http://schema.org/Article">
-      {% if page.cover %}
-        <div class="entry-hero has-cover">
-          <div class="entry-cover" style="background-image:url({{ page.cover.src|thumbnail('l') }})" aria-label="{{ page.title }}">
-          </div>
-      {% else %}
-        <div class="entry-hero">
-      {% endif %}
+      {% set image = page.image or page.cover %}
+      <div class="entry-hero {{ 'no-cover' if not image }}">
+        {%if image %}
+          <div class="entry-cover" style="background-image:url({{ image.src or image|thumbnail('l') }})"></div>
+        {% endif %}
         <div class="entry-info">
           <div class="entry-nav">
             <a href="{{ linkify('/') }}">{{ site.name }}</a>
@@ -52,7 +50,7 @@
             <div class="entry-meta_authors">
               {% if page.authors %}
                 {% for author in page.authors %}
-                  <span class="p-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                  <span class="p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
                     <a href="{{ linkify(author.url) }}" itemprop="name">{{ author.name }}</a>
                   </span>
                 {% endfor %}

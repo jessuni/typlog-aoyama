@@ -21,8 +21,19 @@
 }
 .entry-nav {
   position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,0));
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 20px 40px;
+}
+.no-cover .entry-nav {
   top: var(--aomori-padding-sm);
+  left: auto;
   background: transparent;
+  width: auto;
+  padding: 0;
 }
 .entry-nav a {
   font-family: avenir next,var(--cjk-sans),sans-serif;
@@ -31,28 +42,20 @@
   text-decoration: none;
   font-size: 24px;
   font-weight: 900;
-  color: var(--aomori-primary-color);
+  color: #fffffffa;
   opacity: 0.7;
   transition: all .2s ease;
 }
-.entry-nav a:hover {
+.no-cover .entry-nav a {
+  color: var(--aomori-primary-color);
+}
+.no-cover .entry-nav a:hover {
   opacity: 1;
-}
-.has-cover .entry-nav {
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,0));
-  width: 100%;
-  box-sizing: border-box;
-  padding: 24px 20px 40px;
-}
-.has-cover .entry-nav a {
-  color: #fffffffa;
 }
 .entry-info {
   margin: 0 auto;
-  padding-top: 10vh;
-  padding-bottom: 52px;
+  padding-top: 1em;
+  padding-bottom: var(--aomori-padding-sm);
   max-width: 980px;
   width: 100%;
   flex: 1 1 40%;
@@ -60,9 +63,9 @@
   display: flex;
   flex-flow: column nowrap;
 }
-.has-cover .entry-info {
-  padding-top: 1em;
-  padding-bottom: var(--aomori-padding-sm);
+.no-cover .entry-info {
+  padding-top: 10vh;
+  padding-bottom: 52px;
 }
 .entry-tags a,
 .entry-meta a {
@@ -144,38 +147,34 @@
   border: 0;
 }
 h1.p-name {
-  font-size: 1.5em;
-  font-size: 3em;
-  font-weight: 700;
   margin: 1rem 0;
   color: var(--aomori-primary-color);
   text-transform: uppercase;
+  line-height: 1.15;
+  font-size: clamp(1.5em, 48 / 1280 * 100vw, 3em);
+}
+.no-cover h1.p-name {
+  font-size: 3em;
+  font-weight: 700;
   padding: 2rem 0;
   border-top: 1rem solid currentColor;
-  line-height: 1.15;
-}
-.has-cover h1.p-name {
-  font-size: min(3em, max(1.5em, 48 / 1280 * 100vw));
-  font-size: clamp(1.5em, 48 / 1280 * 100vw, 3em);
-  padding: 0;
-  border: 0;
 }
 h2.p-summary {
   margin: 1em 0;
-  font-size: 1.5em;
   font-weight: 400;
-  color: var(--aomori-secondary-color);
-}
-.has-cover h2.p-summary {
   font-size: 1.25em;
   color: var(--aomori-primary-color);
 }
+.no-cover h2.p-summary {
+  font-size: 1.5em;
+  color: var(--aomori-secondary-color);
+}
 
 @media (max-width: 680px) {
-  .has-cover h2.p-summary {
+  h2.p-summary {
     font-size: 1rem;
   }
-  h2.p-summary {
+  .no-cover h2.p-summary {
     font-size: 1.25rem;
   }
 }
