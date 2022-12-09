@@ -16,6 +16,12 @@
   background: center / cover rgba(var(--aomori-bg-rgb), 0.8) no-repeat;
   flex: 1 1 60%;
 }
+.Episode .entry-cover {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100vw;
+  position: relative;
+}
 .entry-cover > img {
   display: none;
 }
@@ -28,7 +34,7 @@
   box-sizing: border-box;
   padding: 24px 20px 40px;
 }
-.no-cover .entry-nav {
+.Plain .entry-nav {
   top: var(--aomori-padding-sm);
   left: auto;
   background: transparent;
@@ -46,10 +52,10 @@
   opacity: 0.7;
   transition: all .2s ease;
 }
-.no-cover .entry-nav a {
+.Plain .entry-nav a {
   color: var(--aomori-primary-color);
 }
-.no-cover .entry-nav a:hover {
+.Plain .entry-nav a:hover {
   opacity: 1;
 }
 .entry-info {
@@ -63,7 +69,7 @@
   display: flex;
   flex-flow: column nowrap;
 }
-.no-cover .entry-info {
+.Plain .entry-info {
   padding-top: 10vh;
   padding-bottom: 52px;
 }
@@ -118,6 +124,10 @@
 .entry-meta time {
   float: right;
 }
+.p-serial {
+  font-weight: 700;
+  color: var(--aomori-meta-color);
+}
 .main {
   flex-grow: 1;
   min-height: 480px;
@@ -153,7 +163,7 @@ h1.p-name {
   line-height: 1.15;
   font-size: clamp(1.5em, 48 / 1280 * 100vw, 3em);
 }
-.no-cover h1.p-name {
+.Plain h1.p-name {
   font-size: 3em;
   font-weight: 700;
   padding: 2rem 0;
@@ -165,7 +175,7 @@ h2.p-summary {
   font-size: 1.25em;
   color: var(--aomori-primary-color);
 }
-.no-cover h2.p-summary {
+.Plain h2.p-summary {
   font-size: 1.5em;
   color: var(--aomori-secondary-color);
 }
@@ -174,7 +184,7 @@ h2.p-summary {
   h2.p-summary {
     font-size: 1rem;
   }
-  .no-cover h2.p-summary {
+  .Plain h2.p-summary {
     font-size: 1.25rem;
   }
 }
