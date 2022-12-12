@@ -25,6 +25,60 @@
 .entry-cover > img {
   display: none;
 }
+.entry-controls {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--aomori-invert-rgb);
+  opacity: 1;
+  transition: opacity ease-in 0.3s;
+}
+.entry-controls.Hidden {
+  opacity: 0;
+}
+.entry-controls.Light {
+  color: rgb(var(--aomori-bg-rgb), 0.7);
+}
+.entry-controls button {
+  width: 4em;
+  height: 4em;
+  background: transparent;
+  border: none;
+  color: currentColor;
+  fill: currentColor;
+}
+.entry-controls svg {
+  width: 100%;
+  height: 100%;
+}
+.icon_play,
+.Playing .icon_pause {
+  display: inline;
+}
+svg.icon_pause,
+.Playing svg.icon_play {
+  display: none;
+}
+.p-time {
+  padding: 0.2em 0.4em;
+  background: rgba(0, 0, 0, 0.8);
+  color: rgb(var(--secondary-color-rgb));
+}
+.entry-controls.Light .p-time {
+  background: rgba(255, 255, 255, 0.8);
+  color: rgb(var(--primary-color-rgb));
+}
+.p-current.Hidden {
+  display: none;
+}
+.p-current::after {
+  content: ' /';
+  display: inline;
+}
 .entry-nav {
   position: absolute;
   top: 0;
