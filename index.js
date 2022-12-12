@@ -6,6 +6,7 @@
 
   const initMenu = () => {
     const menu = document.getElementById('menu')
+    if (!menu) return
     const close = document.querySelector('.site-nav_close')
     const dropdown = document.querySelector('.site-nav')
     menu.addEventListener('click', () => {

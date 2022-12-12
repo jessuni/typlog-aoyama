@@ -20,6 +20,7 @@
 
 {% set aoyama = query.config('aoyama') %}
 {% block body %}
+{% set podcast = site.podcast %}
 <div class="snap-container">
   <section class="section landing">
     {% if aoyama and aoyama.video_cover %}
@@ -32,7 +33,11 @@
         </video>
       </div>
     {% endif %}
-    {% set subject = site %}
+    {% if podcast and not site.logo %}
+      {% set subject = podcast %}
+    {% else %}
+      {% set subject = site %}
+    {% endif %}
     {% set type = 'site' %}
     {% include "./_partials/side.j2" %}
     <div class="site-links">
@@ -52,12 +57,12 @@
           </div>
         </div>
       {% endif %}
-      {% if site.podcast %}
+      {% if podcast %}
         <ul class="site-podcast">
-          <li><a href="{{ linkify('/feed/audio.xml') }}" aria-label="RSS"><i class="icon icon-feed" aria-hidden="true"></i></a></li>
-          {% for item in site.podcast.links %}
+          <li><a href="{{ linkify('/feed/audio.xml') }}" aria-label="RSS" title="RSS"><i class="icon icon-feed" aria-hidden="true"></i></a></li>
+          {% for item in podcast.links %}
             <li>
-              <a href="{{ linkify(item.url) }}"{% if item.blank %} target="_blank"{% endif %}><i class="icon icon-{{ item.icon }}"></i>
+              <a href="{{ linkify(item.url) }}"{% if item.blank %} target="_blank"{% endif %} title="{{ item.title }}" aria-label="{{ item.title }}"><i class="icon icon-{{ item.icon }}" aria-hidden="true"></i>
               </a>
             </li>
           {% endfor %}
@@ -65,8 +70,8 @@
       {% endif %}
       {% if site.socials %}
         <div class="site-social">
-        {% if site.podcast and site.podcast.email %}
-          {{ render_social_icons(site, site.podcast.email) }}
+        {% if podcast and podcast.email %}
+          {{ render_social_icons(site, podcast.email) }}
         {% else %}
           {{ render_social_icons(site) }}
         {% endif %}

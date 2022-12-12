@@ -446,6 +446,7 @@ a {
 .subject-item {
   display: flex;
   flex-flow: row nowrap;
+  position: relative;
 }
 .subject-item + .subject-item {
   margin-top: 3.75em;
@@ -484,9 +485,37 @@ a {
   line-height: 1.35;
   color: var(--aomori-text-color);
 }
-.subject-item_time {
+.subject-item_meta {
   font-size: 0.875em;
   color: var(--aomori-meta-color);
+  display: flex;
+  align-items: center;
+}
+.subject-item_audio {
+  display: inline-block;
+}
+.subject-item_audio::before{
+  content: '\2022';
+  display: inline-block;
+  margin: 0 0.2em;
+}
+.subject-item_duration {
+  color: var(--primary-color-hex);
+  border: 1px solid currentColor;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 0.9em;
+  padding: 0 0.2em;
+}
+.subject-item_serial {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.1;
+  line-height: 1;
 }
 .subject-list_nav {
   padding: 1em 0;

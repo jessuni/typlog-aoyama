@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="{{ static_url }}assets/aoyama_content.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+{% if page.type == 'audio' %}
+  <link rel="stylesheet" href="https://s3.typlog.com/npm/shikwasa@2.0.1/dist/shikwasa.min.css">
+  <script src="https://s3.typlog.com/npm/shikwasa@2.0.1/dist/shikwasa.min.js"></script>
+{% endif %}
 <script src="{{ static_url }}assets/mode.js"></script>
 <!--
   *********
@@ -14,50 +18,66 @@
 -->
 {% endblock %}
 
+{% block script %}
+  {% if page.type == 'audio' %}
+    <script src="{{ static_url }}assets/audio.js"></script>
+  {% endif %}
+{% endblock %}
+
 {% block body %}
 <div class="body">
-  <div class="main _episode">
-    <article role="main" class="h-entry" itemscope itemtype="http://schema.org/Article">
-      {% if page.cover %}
-        <div class="entry-hero has-cover">
-          <div class="entry-cover" style="background-image:url({{ page.cover.src|thumbnail('l') }})" aria-label="{{ page.title }}">
+  <div class="main">
+    <article class="h-entry" itemscope itemtype="http://schema.org/Article">
+    {% if page.type == 'audio' and page.image %}
+      <div class="entry-hero Episode">
+        <div class="entry-cover" style="background-image:url({{ page.image | thumbnail('l') }})" data-url="{{ page.image }}">
+          <div class="entry-controls Hidden">
+            <button title="Toggle audio"><svg class="icon_play" aria-hidden="true"><use href="#shk-icon_play"></svg><svg class="icon_pause" aria-hidden="true"><use href="#shk-icon_pause"></svg></button>
+            <span class="p-time">
+              <span class="p-current Hidden" title="Audio current time" aria-label="Audio current time">00:00</span>
+              <span title="Audio duration" aria-label="Audio Duration">{{ page.duration }}</span>
+            </span>
+
           </div>
-      {% else %}
-        <div class="entry-hero">
-      {% endif %}
-        <div class="entry-info">
-          <div class="entry-nav">
-            <a href="{{ linkify('/') }}">{{ site.name }}</a>
-          </div>
-          {% if page.type == 'audio' %}
-            {% if page.season and page.episode %}
-              <span class="item-label">S{{ page.season }}E{{ page.episode }}</span>
-            {% endif %}
-            <span class="item-label">{{ page.duration }}</span>
+        </div>
+    {% elif page.cover %}
+      <div class="entry-hero">
+        <div class="entry-cover" style="background-image:url({{ page.cover.src | thumbnail('l') }})"></div>
+    {% else %}
+      <div class="entry-hero Plain">
+    {% endif %}
+      <div class="entry-info">
+        <div class="entry-nav">
+          <a href="{{ linkify('/') }}">{{ site.name }}</a>
+        </div>
+        {% if page.type == 'audio' %}
+          {% if page.season and page.episode %}
+            <span class="p-serial">S{{ page.season }}E{{ page.episode }}</span>
           {% endif %}
-          {% if page.tags %}
-            <div class="entry-tags">
-              {% for tag in page.tags %}
-                <a class="p-category" href="{{ linkify(tag.url) }}">{{ tag.title }}</a>
+        {% endif %}
+        {% if page.tags %}
+          <div class="entry-tags">
+            {% for tag in page.tags %}
+              <a class="p-category" href="{{ linkify(tag.url) }}">{{ tag.title }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <div class="entry-headline">
+          <h1 class="p-name" itemprop="headline">{{ page.title }}</h1>
+          {% if page.subtitle %}
+            <h2 class="p-summary">{{ page.subtitle }}</h2>
+          {% endif %}
+        </div>
+        <div class="entry-meta">
+          <div class="entry-meta_authors">
+            {% if page.authors %}
+              {% for author in page.authors %}
+                <span class="p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <a href="{{ linkify(author.url) }}" itemprop="name">{{ author.name }}</a>
+                </span>
               {% endfor %}
-            </div>
-          {% endif %}
-          <div class="entry-headline">
-            <h1 class="p-name" itemprop="headline">{{ page.title }}</h1>
-            {% if page.subtitle %}
-              <h2 class="p-summary">{{ page.subtitle }}</h2>
             {% endif %}
           </div>
-          <div class="entry-meta">
-            <div class="entry-meta_authors">
-              {% if page.authors %}
-                {% for author in page.authors %}
-                  <span class="p-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                    <a href="{{ linkify(author.url) }}" itemprop="name">{{ author.name }}</a>
-                  </span>
-                {% endfor %}
-              {% endif %}
-            </div>
           {% if page.published_at %}
             <time class="dt-published" datetime="{{ page.published_at|xmldatetime }}" itemprop="datePublished">{{ page.published_at.strftime('%b %d, %Y') }}</time>
           {% endif %}

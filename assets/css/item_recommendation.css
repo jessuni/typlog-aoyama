@@ -1,0 +1,224 @@
+.home-more,
+.navigation {
+  font-size: 18px;
+  font-weight: 700;
+}
+.navigation:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.navigation .prev {
+  float: left;
+}
+.navigation .next {
+  float: right;
+}
+.home-more a,
+.navigation a {
+  text-decoration: none;
+  color: var(--aomori-primary-color);
+  border-bottom: 3px solid transparent;
+}
+.item {
+  padding: 20px 0 40px;
+}
+.item:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.item a {
+  color: var(--primary-color-hex);
+  text-decoration: none;
+}
+.item a:hover {
+  color: var(--aomori-secondary-color);
+}
+
+.item-main {
+  display: block;
+  overflow: hidden;
+}
+.item time {
+  color: rgba(var(--aomori-invert-rgb), 0.102);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sys-sans), sans-serif;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.item.Text h3,
+.item.Image h3,
+.item.Review h3,
+.item.Episode h3 {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 4px 0 10px;
+}
+.item.Cover h3 {
+  font-weight: 500;
+}
+.item.Cover h4 {
+  font-weight: 400;
+}
+.item-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--aomori-secondary-color);
+}
+.item.Image .item-image,
+.item.Review .item-image {
+  float: left;
+  display: block;
+  max-width: 40%;
+  margin-right: 40px;
+}
+.item.Image .item-image img,
+.item.Review .item-image img {
+  max-height: 300px;
+}
+.item.Image .item-meta {
+  margin: 10px 0 30px;
+  color: rgba(var(--aomori-invert-rgb), 0.42);
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.item.Review img {
+  box-shadow: 1px 1px 5px rgba(var(--aomori-invert-rgb), 0.102);
+  border-radius: 3px;
+}
+.item-review {
+  color: rgba(var(--aomori-invert-rgb), 0.42);
+  margin: 10px 0 30px;
+}
+.item-review > span {
+  margin-right: 1em;
+}
+.item-label {
+  display: inline-block;
+  padding: 0 4px;
+  margin-right: 6px;
+  border: 1px solid rgba(var(--aomori-invert-rgb), 0.1);
+  border-radius: 16px;
+  color: rgba(var(--aomori-invert-rgb), 0.102);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+  vertical-align: middle;
+}
+.item.Episode .item-image {
+  display: flex;
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+}
+.item.Episode .item-image img {
+  object-fit: cover;
+}
+.item:first-of-type {
+  padding-top: 0;
+}
+.item + .item {
+  border-top: 1px solid rgba(var(--aomori-invert-rgb), 0.04);
+}
+.item-cover {
+  display: block;
+  position: relative;
+}
+.item-cover h3 {
+  font-size: 30px;
+}
+.item-cover_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(var(--aomori-invert-rgb), 0.031);
+}
+.item-cover_image > div {
+  background: no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.item-cover_inner {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 120px 40px 40px;
+  background-color: rgba(var(--aomori-invert-rgb), 0.42);
+  transition: background-color 0.2s ease;
+}
+.item-cover_inner:hover {
+  background-color: rgba(var(--aomori-invert-rgb), 0.678);
+}
+.item-cover time,
+.item-cover h4 {
+  color: rgba(var(--aomori-bg-rgb), 0.98);
+}
+.prev-subject .item {
+  font-weight: 18px;
+  line-height: 1.42;
+  margin: 10px 0;
+  padding: 0;
+  border: 0;
+}
+.prev-subject .item h3 {
+  margin: 0.2em 0;
+  font-size: 1.3em;
+  color: rgba(var(--aomori-invert-rgb), 0.859);
+}
+.prev-subject .item-subtitle {
+  font-size: 1em;
+}
+.prev-subject a:hover h3 {
+  color: rgb(var(--primary-color-rgb));
+}
+.prev-subject .item-meta {
+  margin: 0;
+}
+@media (max-width: 520px) {
+  .prev-subject h3 {
+    font-size: 1.1em;
+  }
+}
+@media (max-width: 640px) {
+  .item.Text h3,
+  .item.Image h3,
+  .item.Review h3,
+  .item.Episode h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 680px) {
+  .prev-subject h3 {
+    font-size: 1.2em;
+  }
+  .item.Image .item-image {
+    float: none;
+    max-width: 100%;
+    max-height: 300px;
+    margin: 0 0 10px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .item.Image .item-image img {
+    max-height: none;
+  }
+  .item.Image .item-meta {
+    margin: 8px 0;
+  }
+  .item.Review .item-image {
+    margin-right: 20px;
+    max-width: 36%;
+  }
+  .item-review > span {
+    display: block;
+    margin: 0 0 5px;
+  }
+}
