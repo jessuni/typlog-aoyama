@@ -237,59 +237,6 @@ li.task-item {
   justify-content: space-between;
   align-items: center;
 }
-.entry-authors {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-}
-.entry-authors .p-author {
-  display: flex;
-  margin: 0.5em 0;
-}
-.p-author.h-card::before {
-  content: '&';
-  font-size: 3em;
-  font-family: var(--sys-serif), serif;
-  font-weight: 700;
-  color: rgba(var(--aomori-invert-rgb), 0.1);
-  width: 2em;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  user-select: none;
-  line-height: 1em;
-  margin-right: 10px;
-}
-.p-author.h-card:first-of-type::before {
-  content: 'by';
-}
-.entry-authors .author_image {
-  display: block;
-  width: 48px;
-  height: 48px;
-  margin-right: 10px;
-  flex-shrink: 0;
-}
-.entry-authors .author_image img {
-  border-radius: 50%;
-}
-.entry-authors .author_main {
-  flex-grow: 1;
-  font-size: 16px;
-}
-.entry-authors .author_meta .icon {
-  vertical-align: middle;
-}
-.entry-authors .author_bio {
-  margin-top: 5px;
-  font-size: 15px;
-  color: rgba(var(--aomori-invert-rgb), 0.6);
-}
-.entry-authors p {
-  margin: 0;
-}
 .entry-speakers {
   display: flex;
   margin-bottom: 24px;
@@ -304,7 +251,6 @@ li.task-item {
   margin-bottom: 1em;
 }
 .entry-speakers strong {
-  border-bottom: 3px solid rgb(var(--primary-color-rgb));
   font-size: 14px;
   text-transform: uppercase;
 }

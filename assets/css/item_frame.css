@@ -18,8 +18,6 @@
 }
 .Episode .entry-cover {
   flex: 0 0 auto;
-  width: 100%;
-  height: 100vw;
   position: relative;
 }
 .entry-cover > img {
@@ -233,13 +231,101 @@ h2.p-summary {
   font-size: 1.5em;
   color: var(--aomori-secondary-color);
 }
-
+.entry-authors,
+.entry-speakers {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+}
+.entry-authors .p-author {
+  display: flex;
+  margin: 0.5em 0;
+}
+.entry-speakers .p-author {
+  display: inline-flex;
+  margin: 5px;
+}
+.entry-authors .author_image,
+.entry-speakers .author_image {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.entry-authors .author_image img,
+.entry-speakers .author_image img {
+  border-radius: 50%;
+}
+.entry-authors .author_image img > span,
+.entry-speakers .author_image img > span {
+  font-weight: inherit;
+  font-size: inherit;
+}
+.entry-authors .author_image span,
+.entry-speakers .author_image span {
+  font-weight: 900;
+  font-size: 2.5em;
+}
+.entry-authors .author_main,
+.entry-speakers .author_main {
+  flex-grow: 1;
+  font-size: 16px;
+}
+.entry-authors .author_meta .icon,
+.entry-speakers .author_meta .icon {
+  vertical-align: middle;
+}
+.entry-authors .author_bio,
+.entry-speakers .author_bio {
+  margin-top: 5px;
+  font-size: 15px;
+  color: rgba(var(--aomori-invert-rgb), 0.6);
+}
+.entry-authors p,
+.entry-speakers p {
+  margin: 0;
+}
+.p-author.h-card::before {
+  content: '&';
+  font-size: 3em;
+  font-family: var(--sys-serif), serif;
+  font-weight: 700;
+  color: rgba(var(--aomori-invert-rgb), 0.1);
+  width: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  user-select: none;
+  line-height: 1em;
+  margin-right: 10px;
+}
+.entry-speakers .p-author.h-card::before {
+  width: 1.2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-author.h-card:first-of-type::before {
+  content: 'by';
+}
+.entry-speakers .p-author.h-card:first-of-type::before {
+  content: '\00a0';
+  width: 0;
+  margin: 0;
+}
 @media (max-width: 680px) {
   h2.p-summary {
     font-size: 1rem;
   }
   .Plain h2.p-summary {
     font-size: 1.25rem;
+  }
+  .Episode .entry-cover {
+    width: 100%;
+    height: 100vw;
   }
 }
 @media (max-width: 1020px) {
