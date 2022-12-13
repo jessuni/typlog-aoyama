@@ -193,6 +193,7 @@ a {
   align-items: center;
   justify-content: flex-end;
 }
+.site-podcast li + li,
 .site-social a + a {
   margin-left: 1.5em;
 }
@@ -299,6 +300,7 @@ a {
   flex: 1 1 60%;
 }
 .hero-info {
+  margin: 2rem 0 0;
   flex: 1 1 40%;
   display: flex;
   flex-flow: column nowrap;
@@ -673,6 +675,9 @@ a {
   .hero.horizontal,
   .hero.vertical {
     padding: 0;
+  }
+  .hero-info {
+    margin: 0;
   }
   .has-cover .hero-info {
     padding-top: 1em;
