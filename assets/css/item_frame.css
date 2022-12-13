@@ -48,6 +48,7 @@
   border: none;
   color: currentColor;
   fill: currentColor;
+  cursor: pointer;
 }
 .entry-controls svg {
   width: 100%;
